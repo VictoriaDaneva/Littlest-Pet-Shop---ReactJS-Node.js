@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="./editPost.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">The Coffee-Shop</div>
+      <div class="menu">
+        <a class="item" href="/home">Home</a>
+        <a class="item" href="/coffee">Coffee</a>
+        <a class="item" href="/about-us">About Us</a>
+        <a class="item" href="/create">Create</a>
+        <a class="item" href="/register">Register</a>
+        <a class="item" href="/login">Login</a>
+        <a class="item" href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Edit Product Card -->
+    <div class="card">
+      <h2>Edit Product</h2>
+      <form action="/update-product" method="post" class="form">
+        <input
+          type="url"
+          id="image-url"
+          name="imageUrl"
+          placeholder="Image URL"
+          required
+        />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Product Title"
+          required
+        />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          placeholder="Price"
+          step="0.01"
+          required
+        />
+        <input
+          type="text"
+          id="type"
+          name="type"
+          placeholder="Product Type"
+          required
+        />
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Description"
+          rows="3"
+          required
+        ></textarea>
+        <div class="button-group">
+          <button type="submit">Save Changes</button>
+          <button
+            type="button"
+            class="cancel-btn"
+            onclick="window.location.href='/products'"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

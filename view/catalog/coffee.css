@@ -1,0 +1,288 @@
+:root {
+  --color-primary: #3a85b4;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #9baedb;
+  color: #183371;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Navigation bar*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #183371;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+nav .menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav .item {
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+  line-height: 60px;
+  cursor: pointer;
+  position: relative;
+}
+
+nav .item:hover {
+  color: var(--color-primary);
+}
+
+nav .menu {
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  nav .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav .item {
+    line-height: normal;
+    padding: 10px 0;
+  }
+}
+/*background*/
+.background {
+  position: fixed;
+  top: -50vmin;
+  left: -50vmin;
+  width: 100vmin;
+  height: 100vmin;
+  border-radius: 47% 53% 61% 39% / 45% 51% 49% 55%;
+  background: #65c8ff;
+  z-index: -1;
+}
+
+.background::after {
+  content: "";
+  position: fixed;
+  right: -50vmin;
+  bottom: -55vmin;
+  width: 100vmin;
+  height: 100vmin;
+  border-radius: 47% 53% 61% 39% / 45% 51% 49% 55%;
+  background: #143d81;
+}
+/*catalog*/
+.catalog {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+  background: #f9f9f9;
+}
+
+.catalog header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.catalog h1 {
+  font-size: 2rem;
+  color: #183371;
+}
+
+.catalog p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-details {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #183371;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #3a85b4;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 10px 0;
+  margin-bottom: 35px;
+}
+
+.details-button {
+  background-color: #183371;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.details-button:hover {
+  background: #335ab6;
+}
+
+/*footer*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #183371;
+  color: white;
+  padding: 30px 20px;
+  margin-top: 40px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-image {
+  padding: 0 70px;
+  width: 170px; /* Adjust size as needed */
+  height: 260px;
+}
+
+.footer-right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+}
+
+.footer-column h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #f3f3f3;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+
+  .footer-column h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-column a {
+    font-size: 1rem;
+  }
+}
