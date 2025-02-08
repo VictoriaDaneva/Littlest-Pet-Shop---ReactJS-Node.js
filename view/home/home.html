@@ -13,14 +13,28 @@
   <body>
     <!--navigation bar-->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
@@ -28,51 +42,44 @@
     <!--Hero image-->
     <div class="hero-section">
       <div class="hero-content">
-        <h1 class="hero-heading">'tis the season</h1>
-        <p class="hero-subtext">
-          Unwrap our limited-edition blends and enjoy the season's most
-          delicious flavors.
-        </p>
-        <button class="hero-button"><a href="/coffee">Shop Now</a></button>
+        <h1 class="hero-heading">Paws for Love</h1>
+        <p class="hero-subtext">Because love is fur real🐾❤️</p>
+        <button class="hero-button"><a href="/coffee">Discover now</a></button>
       </div>
     </div>
-
-    <!--Perks bar-->
-    <div class="perks-bar">
-      <div class="perk">
-        <img src="../images/pay.png" alt="Right to Return" class="perk-icon" />
-        <span class="perk-text">Right to Return</span>
+    <!--Menu-->
+    <section class="explore-category">
+      <div class="category-header">
+        <h2>Explore By Category</h2>
+        <a href="/pets" class="view-all">View All →</a>
       </div>
-      <div class="perk">
-        <img src="../images/24-7.png" alt="24/7 Service" class="perk-icon" />
-        <span class="perk-text">24/7 Service</span>
+      <div class="categories">
+        <a href="/dogs" class="category-card" style="background-color: #c8e6c9">
+          <img src="dog-icon.png" alt="Dog" />
+          <h3>Dog</h3>
+        </a>
+        <a
+          href="/rabbits"
+          class="category-card"
+          style="background-color: #ffecb3"
+        >
+          <img src="rabbit-icon.png" alt="Rabbit" />
+          <h3>Rabbit</h3>
+        </a>
+        <a href="/cats" class="category-card" style="background-color: #ffccbc">
+          <img src="cat-icon.png" alt="Cat" />
+          <h3>Cat</h3>
+        </a>
+        <a
+          href="/birds"
+          class="category-card"
+          style="background-color: #e1bee7"
+        >
+          <img src="bird-icon.png" alt="Bird" />
+          <h3>Bird</h3>
+        </a>
       </div>
-      <div class="perk">
-        <img
-          src="../images/delivery.png"
-          alt="Express Delivery"
-          class="perk-icon"
-        />
-        <span class="perk-text">Express Delivery</span>
-      </div>
-      <div class="perk">
-        <img
-          src="../images/price.png"
-          alt="Price Protection"
-          class="perk-icon"
-        />
-        <span class="perk-text">Price Protection</span>
-      </div>
-      <div class="perk">
-        <img
-          src="../images/quality.png"
-          alt="High Quality Coffee"
-          class="perk-icon"
-        />
-        <span class="perk-text">High Quality Coffee</span>
-      </div>
-    </div>
-
+    </section>
     <!--Static card products-->
     <section class="products-section">
       <h2 class="products-heading">Shop Best-Sellers</h2>

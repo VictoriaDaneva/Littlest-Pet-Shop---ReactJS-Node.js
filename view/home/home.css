@@ -4,83 +4,148 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #9baedb;
-  color: #183371;
+  background: linear-gradient(to right, #48a16d, #f8c7e2d3);
+  color: #187130;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/*Navigation bar*/
+/* Navigation bar */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #183371;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: linear-gradient(to right, #30824a, #feb2dcd3);
   height: 60px;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
-
-nav .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-}
-
-nav .menu {
-  position: relative;
+nav .left-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 
-nav .item {
+nav .logo img {
+  width: 70px;
+  height: auto;
+}
+nav .search-container {
+  display: flex;
+  align-items: center;
+}
+
+nav .search-container .search-input {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+nav .center-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.753);
+  padding: 7px 20px;
+  border-radius: 60px;
+}
+
+nav .center-menu .item {
+  font-size: 1rem;
+  color: #30824a;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+nav .center-menu .item:hover {
+  background: rgba(7, 108, 31, 0.2);
+  border-color: rgb(68, 137, 93);
+}
+
+nav .auth-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .auth-menu .item {
   font-size: 0.9rem;
   color: white;
   text-decoration: none;
-  padding: 0 10px;
-  line-height: 60px;
-  cursor: pointer;
-  position: relative;
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: background 0.3s, border-color 0.3s;
 }
 
-nav .item:hover {
-  color: var(--color-primary);
+nav .auth-menu .item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
 }
-
-nav .menu {
-  padding-right: 20px;
-  overflow: hidden;
-}
-
-/* For mobile responsiveness */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     height: auto;
+    padding: 15px 10px;
   }
 
-  nav .menu {
+  nav .left-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav .logo img {
+    width: 60px;
+  }
+
+  nav .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav .search-input {
+    width: 80%;
+    font-size: 0.85rem;
+  }
+
+  nav .center-menu {
+    position: static;
+    transform: none;
     flex-direction: column;
     gap: 10px;
+    background: none;
+    padding: 0;
   }
 
-  nav .item {
-    line-height: normal;
-    padding: 10px 0;
+  nav .center-menu .item {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  nav .auth-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 }
-
 /*hero section*/
 .hero-section {
-  background: url("https://www.refinery29.com/images/10045552.jpg?crop=40%3A21")
+  background: url("https://media.cnn.com/api/v1/images/stellar/prod/171201124714-cat-dog-stock.jpg?q=w_2472,h_1391,x_0,y_0,c_fill")
     no-repeat center center/cover;
   height: 100vh;
   display: flex;
@@ -122,36 +187,138 @@ nav .menu {
 }
 
 .hero-button:hover {
-  background-color: #f3f3f3;
+  background-color: #cdcdcdb7;
 }
 
-/*Perks bar*/
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 0 30px;
+  }
 
-.perks-bar {
+  .hero-content {
+    max-width: 350px;
+  }
+
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+/*Categories of pets*/
+.explore-category {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Header and button in one line */
+.category-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #183371;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.perk {
+/* View All button styling */
+.view-all {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: #187130d1;
+  color: white;
+  transition: 0.9s ease-in-out;
+}
+
+.view-all:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
+
+/* Category container */
+.categories {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.perk-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
+/* Individual category cards */
+.category-card {
+  text-decoration: none;
+  width: 140px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.perk-text {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #ffffff;
+.category-card img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Hover effect */
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+@media (max-width: 768px) {
+  .category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .categories {
+    gap: 15px;
+  }
+
+  .category-card {
+    width: 120px;
+    padding: 15px;
+  }
+
+  .category-card img {
+    width: 45px;
+    height: 45px;
+  }
 }
 
 /*card products*/
