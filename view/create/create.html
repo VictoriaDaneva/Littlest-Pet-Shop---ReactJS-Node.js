@@ -13,14 +13,28 @@
   <body>
     <!-- Navigation Bar -->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
@@ -30,7 +44,7 @@
 
     <!-- Edit Product Card -->
     <div class="card">
-      <h2>Create Product</h2>
+      <h2>Post a Pet</h2>
       <form action="/update-product" method="post" class="form">
         <input
           type="url"
@@ -43,22 +57,15 @@
           type="text"
           id="title"
           name="title"
-          placeholder="Product Title"
+          placeholder="Pet Name"
           required
         />
-        <input
-          type="number"
-          id="price"
-          name="price"
-          placeholder="Price"
-          step="0.01"
-          required
-        />
+
         <input
           type="text"
-          id="type"
-          name="type"
-          placeholder="Product Type"
+          id="bred"
+          name="breed"
+          placeholder="Pet Breed"
           required
         />
         <input
@@ -68,6 +75,18 @@
           placeholder="Author"
           required
         />
+        <select
+          id="pet-type"
+          name="pet-type"
+          placeholder="Select Pet Type"
+          required
+        >
+          <option value="" disabled selected>Select Pet Type</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="bird">Bird</option>
+          <option value="rabbit">Rabbit</option>
+        </select>
         <textarea
           id="description"
           name="description"
