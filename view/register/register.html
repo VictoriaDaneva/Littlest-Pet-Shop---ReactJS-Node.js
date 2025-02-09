@@ -13,14 +13,28 @@
   <body>
     <!-- Navigation Bar -->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
