@@ -387,23 +387,21 @@ nav .auth-menu .item:hover {
 
 /*about us info*/
 .about-section {
-  background-color: #063a69; /* Deep blue */
-  color: #fff; /* White text */
+  background-color: #02410ea1;
+  color: #fff;
   padding: 60px 20px;
 }
-
 .about-container {
   display: flex;
-  flex-wrap: nowrap; /* Prevent the text and image from stacking */
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 20px; /* Add spacing between the text and image */
+  gap: 20px;
 }
-
 .about-text {
-  flex: 1; /* Allow the text to take up half the space */
+  flex: 1;
   padding: 20px;
   text-align: left;
 }
@@ -430,7 +428,7 @@ nav .auth-menu .item:hover {
 .about-button {
   display: inline-block;
   background-color: #fff;
-  color: #063a69;
+  color: #1f7436;
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
@@ -440,8 +438,8 @@ nav .auth-menu .item:hover {
 }
 
 .about-button a {
+  color: #1f7436;
   text-decoration: none;
-  color: #063a69;
   font-weight: bold;
 }
 
@@ -450,22 +448,48 @@ nav .auth-menu .item:hover {
 }
 
 .about-image {
-  flex: 1; /* Allow the image to take up half the space */
+  flex: 1;
   padding: 20px;
   text-align: center;
 }
 
 .about-image img {
-  max-width: 90%; /* Ensure the image doesn't overflow its container */
+  max-width: 90%;
   height: auto;
   border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text,
+  .about-image {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
 }
 /*footer*/
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #183371;
+  background-color: #02410ea1;
   color: white;
   padding: 30px 20px;
   margin-top: 40px;
@@ -480,7 +504,7 @@ footer {
 
 .footer-image {
   padding: 0 70px;
-  width: 170px; /* Adjust size as needed */
+  width: 170px;
   height: 260px;
 }
 
@@ -534,7 +558,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* For mobile responsiveness */
 @media (max-width: 768px) {
   footer {
     flex-direction: column;
