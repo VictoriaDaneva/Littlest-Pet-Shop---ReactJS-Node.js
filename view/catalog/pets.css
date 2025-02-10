@@ -183,10 +183,13 @@ nav .auth-menu .item:hover {
   font-size: 2rem;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Button */
 .dropbtn {
-  position: absolute;
-  left: 245px;
-  top: 160px;
   font-size: 0.9rem;
   background: #30824a;
   color: white;
@@ -202,12 +205,12 @@ nav .auth-menu .item:hover {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
-/* Fix: Ensure the dropdown content is properly positioned */
+/* Dropdown Menu */
 .dropdown-content {
   display: none;
   position: absolute;
-  left: 245px; /* Align with button */
-  top: 200px; /* Spacing below button */
+  left: 0;
+  top: 100%;
   background: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -216,7 +219,7 @@ nav .auth-menu .item:hover {
   z-index: 10;
 }
 
-/* Ensure icons are aligned properly */
+/* Dropdown Links */
 .dropdown-content a {
   display: flex;
   align-items: center;
@@ -231,18 +234,18 @@ nav .auth-menu .item:hover {
   margin-right: 10px;
 }
 
-/* Hover effect */
+/* Hover Effect */
 .dropdown-content a:hover {
   background: #e6f4ea;
 }
 
-/* Show dropdown when hovering over the button */
-.dropbtn:hover + .dropdown-content,
-.dropdown-content:hover {
+/* Show Dropdown When Hovering */
+.dropdown:hover .dropdown-content {
   display: block;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Fade-in animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -252,10 +255,6 @@ nav .auth-menu .item:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.dropdown-content {
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 .catalog p {
