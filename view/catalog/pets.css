@@ -219,7 +219,6 @@ nav .auth-menu .item:hover {
   z-index: 10;
 }
 
-/* Dropdown Links */
 .dropdown-content a {
   display: flex;
   align-items: center;
@@ -234,18 +233,15 @@ nav .auth-menu .item:hover {
   margin-right: 10px;
 }
 
-/* Hover Effect */
 .dropdown-content a:hover {
   background: #e6f4ea;
 }
 
-/* Show Dropdown When Hovering */
 .dropdown:hover .dropdown-content {
   display: block;
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Fade-in Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
