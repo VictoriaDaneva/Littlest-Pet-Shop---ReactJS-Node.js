@@ -17,14 +17,28 @@
   <body>
     <!-- Navigation -->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
@@ -33,31 +47,28 @@
       <div class="product-details">
         <div class="product-image">
           <img
-            src="../images/mocha blend.webp"
-            alt="Chocolate Matcha Green Tea Powder"
+            src="../images/primer1.png"
+            alt="Nona"
             class="main-image"
             itemprop="image"
           />
         </div>
         <div class="product-info">
-          <h1 itemprop="name">Chocolate Matcha Green Tea Powder</h1>
-          <p class="product-price" name="price">€26.00</p>
-          <p class="product-type" name="type">Type: ground coffee</p>
+          <h1 itemprop="name">Nonka Slonka</h1>
+          <p class="product-breed" name="breed">breed: nonaka bonbonka</p>
+          <p class="product-type" name="type">Type: Cat</p>
           <p class="product-description" name="description">
             Our limited edition Chocolate Matcha is made from pure Cameroonian
             cacao and green tea that retains its rich flavor. It’s gluten-free,
             packed with antioxidants, and perfect for a health boost!
           </p>
-          <p class="product-author" name="author">Made by: Victoria EOOD</p>
 
           <div class="wishlist-actions">
             <button class="wishlist-button">Wishlist</button>
             <button class="edit-button">Edit</button>
             <button class="delete-button">Delete</button>
+            <button class="wishlist-button">I want it NOW</button>
           </div>
-          <p class="installment-info">
-            Pay in interest-free installments on orders over €30.
-          </p>
         </div>
       </div>
     </section>
@@ -69,12 +80,12 @@
         <!-- Product Card 1 -->
         <article class="product-card">
           <img
-            src="../images/peppermint blend.webp"
-            alt="Peppermint Matcha Green Tea"
+            src="../images/primer2.png"
+            alt="Kotence"
             class="product-image"
           />
-          <h3 class="product-name">Peppermint Matcha</h3>
-          <p class="product-price">€25.00</p>
+          <h3 class="product-name">Kotence</h3>
+          <p class="product-breed">breed: idk</p>
           <a href="/product/peppermint-matcha" class="details-link"
             >See More Details</a
           >
@@ -83,13 +94,13 @@
         <!-- Product Card 2 -->
         <article class="product-card">
           <img
-            src="../images/mocha blend.webp"
-            alt="Holiday Blend Coffee"
+            src="../images/primer2.png"
+            alt="Kotence"
             class="product-image"
           />
-          <h3 class="product-name">Holiday Blend</h3>
-          <p class="product-price">€24.00</p>
-          <a href="/product/holiday-blend" class="details-link"
+          <h3 class="product-name">Kotence</h3>
+          <p class="product-breed">breed: idk</p>
+          <a href="/product/peppermint-matcha" class="details-link"
             >See More Details</a
           >
         </article>
