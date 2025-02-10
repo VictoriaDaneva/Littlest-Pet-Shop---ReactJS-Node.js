@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalog</title>
-    <link rel="stylesheet" href="./coffee.css" />
+    <link rel="stylesheet" href="./pets.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
       rel="stylesheet"
@@ -13,14 +13,28 @@
   <body>
     <!--navigation bar-->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
@@ -28,8 +42,25 @@
     <div class="background"></div>
     <section class="catalog">
       <header>
-        <h1>Shop All Products</h1>
-        <p>Total Products: 48</p>
+        <h1>View all pets 🐾</h1>
+        <p>Total Pets: 48</p>
+
+        <button class="dropbtn">Select Pet Type</button>
+        <div class="dropdown-content">
+          <a href="#" data-filter="all"> All Pets</a>
+          <a href="#" data-filter="dog"
+            ><img src="../images/dog.png" alt="Dog" /> Dogs</a
+          >
+          <a href="#" data-filter="cat"
+            ><img src="../images/kitty.png" alt="Cat" /> Cats</a
+          >
+          <a href="#" data-filter="bird"
+            ><img src="../images/bird.png" alt="Bird" /> Birds</a
+          >
+          <a href="#" data-filter="rabbit"
+            ><img src="../images/bunny.png" alt="Rabbit" /> Rabbits</a
+          >
+        </div>
       </header>
 
       <div class="product-grid">
@@ -40,21 +71,21 @@
           itemtype="https://schema.org/Product"
         >
           <img
-            src="../images/holiday blend.webp"
-            alt="Peppermint Mocha Flavored Blend Coffee"
+            src="../images/primer2.png"
+            alt="kotka"
             class="product-image"
             itemprop="image"
           />
           <div class="product-details">
-            <h2 class="product-name" itemprop="name">Holiday Blend</h2>
-            <p class="product-price">€24</p>
+            <h2 class="product-name" itemprop="name">Macata</h2>
+            <p class="product-breed">breed: kote</p>
             <p class="product-description" itemprop="description">
               A medium roast ground coffee, perfect for the holiday season.
             </p>
             <button
               class="details-button"
-              aria-label="See more details about Holiday Blend"
-              onclick="window.location.href='/product/holiday-blend'"
+              aria-label="See more details about Macata"
+              onclick="window.location.href=''"
             >
               See More Details
             </button>
@@ -68,21 +99,21 @@
           itemtype="https://schema.org/Product"
         >
           <img
-            src="../images/mocha blend.webp"
-            alt="Peppermint Mocha Flavored Blend Coffee"
+            src="../images/primer2.png"
+            alt="kotka"
             class="product-image"
             itemprop="image"
           />
           <div class="product-details">
-            <h2 class="product-name" itemprop="name">Peppermint Mocha Blend</h2>
-            <p class="product-price">€24</p>
+            <h2 class="product-name" itemprop="name">Macata</h2>
+            <p class="product-breed">breed: kote</p>
             <p class="product-description" itemprop="description">
-              A festive peppermint mocha flavored coffee blend.
+              A medium roast ground coffee, perfect for the holiday season.
             </p>
             <button
               class="details-button"
-              aria-label="See more details about Peppermint Mocha Blend"
-              onclick="window.location.href='/product/peppermint-mocha-blend'"
+              aria-label="See more details about Macata"
+              onclick="window.location.href=''"
             >
               See More Details
             </button>
@@ -96,21 +127,21 @@
           itemtype="https://schema.org/Product"
         >
           <img
-            src="../images/peppermint blend.webp"
-            alt="Peppermint Matcha Tin"
+            src="../images/primer2.png"
+            alt="kotka"
             class="product-image"
             itemprop="image"
           />
           <div class="product-details">
-            <h2 class="product-name" itemprop="name">Peppermint Matcha</h2>
-            <p class="product-price">€25</p>
+            <h2 class="product-name" itemprop="name">Macata</h2>
+            <p class="product-breed">breed: kote</p>
             <p class="product-description" itemprop="description">
-              A refreshing tin of peppermint matcha green tea.
+              A medium roast ground coffee, perfect for the holiday season.
             </p>
             <button
               class="details-button"
-              aria-label="See more details about Peppermint Matcha"
-              onclick="window.location.href='/product/peppermint-matcha'"
+              aria-label="See more details about Macata"
+              onclick="window.location.href=''"
             >
               See More Details
             </button>
