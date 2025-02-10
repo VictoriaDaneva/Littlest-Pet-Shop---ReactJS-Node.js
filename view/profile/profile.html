@@ -13,14 +13,28 @@
   <body>
     <!-- Navigation Bar -->
     <nav>
-      <div class="logo">The Coffee-Shop</div>
-      <div class="menu">
+      <!-- Left: Logo -->
+      <div class="left-section">
+        <a href="/home" class="logo">
+          <img src="../images/logo.png" alt="Littlest Pet Shop" />
+        </a>
+        <div class="search-container">
+          <input type="text" placeholder="🔍 Search..." class="search-input" />
+        </div>
+      </div>
+      <!-- Center: Main Navigation -->
+      <div class="center-menu">
         <a class="item" href="/home">Home</a>
-        <a class="item" href="/coffee">Coffee</a>
-        <a class="item" href="/about-us">About Us</a>
-        <a class="item" href="/create">Create</a>
-        <a class="item" href="/register">Register</a>
+        <a class="item" href="/create">Post</a>
+        <a class="item" href="/pets">Pets</a>
+      </div>
+
+      <!-- Right: Authentication Links -->
+      <div class="auth-menu">
         <a class="item" href="/login">Login</a>
+        <a class="item" href="/register">Sign Up</a>
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/reserve">Reserve</a>
         <a class="item" href="/logout">Logout</a>
       </div>
     </nav>
@@ -32,7 +46,7 @@
     <div class="profile-card">
       <div class="profile-left">
         <div class="profile-image">
-          <img src="../images/mocha blend.webp" alt="Profile Picture" />
+          <img src="../images/primer3.png" alt="Profile Picture" />
         </div>
       </div>
       <div class="profile-right">
@@ -50,28 +64,20 @@
 
     <!-- Recommended Items Section -->
     <section class="recommended-items">
-      <h2>Your Wishlist 🍵</h2>
+      <h2>Your Wishlist 🐾🪶</h2>
       <div class="product-grid">
         <article class="product-card">
-          <img
-            src="../images/peppermint blend.webp"
-            alt="Peppermint Matcha Green Tea"
-            class="product-image"
-          />
+          <img src="../images/primer2.png" alt="kotka" class="product-image" />
           <h3 class="product-name">Peppermint Matcha</h3>
-          <p class="product-price">€25.00</p>
+          <p class="product-breed">breed: idk</p>
           <a href="/product/peppermint-matcha" class="details-link"
             >See More Details</a
           >
         </article>
         <article class="product-card">
-          <img
-            src="../images/mocha blend.webp"
-            alt="Holiday Blend Coffee"
-            class="product-image"
-          />
+          <img src="../images/primer1.png" alt="kotka" class="product-image" />
           <h3 class="product-name">Holiday Blend</h3>
-          <p class="product-price">€24.00</p>
+          <p class="product-breed">breed: nona</p>
           <a href="/product/holiday-blend" class="details-link"
             >See More Details</a
           >
