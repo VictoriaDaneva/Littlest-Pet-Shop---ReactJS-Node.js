@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Adoption Checkout</title>
+    <link rel="stylesheet" href="adoptNow.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <img src="../images/logo.png" alt="Pet Adoption" />
+      </div>
+    </nav>
+
+    <div class="checkout-container">
+      <div class="form-section">
+        <h2 class="section-title">Contact</h2>
+        <input type="email" placeholder="Email" required />
+        <label>
+          <input type="checkbox" /> Email me with news and updates
+        </label>
+
+        <h2 class="section-title">Pet Reservation Details</h2>
+        <select required>
+          <option value="">Select Pet Type</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="text" placeholder="Pet Name (if known)" />
+        <input type="text" placeholder="Preferred Adoption Date" required />
+
+        <h2 class="section-title">Adopter Information</h2>
+        <div class="input-row">
+          <input type="text" placeholder="First Name" required />
+          <input type="text" placeholder="Last Name" required />
+        </div>
+        <input type="text" placeholder="Phone Number" required />
+        <input type="text" placeholder="Address" required />
+
+        <button class="reserve-btn">Reserve Pet</button>
+      </div>
+
+      <div class="summary-section">
+        <h2 class="section-title">Reservation Summary</h2>
+        <div class="pet-summary">
+          <img src="../images/sample-pet.jpg" alt="Pet Image" />
+          <div>
+            <h3>Golden Retriever Puppy</h3>
+            <p>Estimated Fee: <strong>Free</strong></p>
+          </div>
+        </div>
+
+        <input type="text" placeholder="Discount code or voucher" />
+        <button class="apply-btn">Apply</button>
+
+        <div class="total-summary">
+          <p>Reservation Fee:</p>
+          <p><strong>$0.00</strong></p>
+        </div>
+
+        <button class="finalize-btn">Finalize Adoption</button>
+      </div>
+    </div>
+  </body>
+</html>
