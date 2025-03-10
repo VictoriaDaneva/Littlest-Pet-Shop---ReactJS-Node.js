@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router";
+import Header from "./components/Header";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
-  //const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
-
 export default App;
