@@ -1,0 +1,341 @@
+.hero-section {
+  background: url("https://media.cnn.com/api/v1/images/stellar/prod/171201124714-cat-dog-stock.jpg?q=w_2472,h_1391,x_0,y_0,c_fill")
+    no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 50px;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 400px;
+  text-align: right;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hero-button a {
+  color: #333;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+  background-color: #cdcdcdb7;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+/*Categories of pets*/
+.explore-category {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-all {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: #187130d1;
+  color: white;
+  transition: 0.9s ease-in-out;
+}
+
+.view-all:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  color: black;
+  text-decoration: none;
+  width: 140px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .categories {
+    gap: 15px;
+  }
+
+  .category-card {
+    width: 120px;
+    padding: 15px;
+  }
+
+  .category-card img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/*card products*/
+
+.products-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9bb;
+  text-align: center;
+}
+
+.products-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.product-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(21, 65, 35);
+}
+
+.product-breed {
+  font-size: 1rem;
+  color: #1b3622;
+  margin-bottom: 15px;
+}
+
+.wishlist-button {
+  background: #187130d1;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.wishlist-button:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 40px 15px;
+  }
+
+  .products-heading {
+    font-size: 1.6rem;
+  }
+
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/*about us info*/
+.about-section {
+  background-color: #02410ea1;
+  color: #fff;
+  padding: 60px 20px;
+}
+.about-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+.about-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #1f7436;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.about-button a {
+  color: #1f7436;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-button:hover {
+  background-color: #f3f3f3;
+}
+
+.about-image {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text,
+  .about-image {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}

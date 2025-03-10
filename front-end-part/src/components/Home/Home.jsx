@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./Home.css";
 
 export default function Home() {
   return (
@@ -95,7 +96,7 @@ export default function Home() {
               that.
             </p>
             <button className="about-button">
-              <Link to="/about-us">learn more</Link>
+              <Link to="/about-us">Learn More</Link>
             </button>
           </div>
           <div className="about-image">

@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router";
+import "./Heather.css";
+
 const navigation = [
   { name: "Home", path: "/" },
   { name: "Post", path: "/post" },

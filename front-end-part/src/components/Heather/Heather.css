@@ -1,0 +1,132 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #30824a, #feb2dcd3);
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+nav .left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav .logo img {
+  width: 70px;
+  height: auto;
+}
+nav .search-container {
+  display: flex;
+  align-items: center;
+}
+
+nav .search-container .search-input {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+nav .center-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.753);
+  padding: 7px 20px;
+  border-radius: 60px;
+}
+
+nav .center-menu .item {
+  font-size: 1rem;
+  color: #30824a;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+nav .center-menu .item:hover {
+  background: rgba(7, 108, 31, 0.2);
+  border-color: rgb(68, 137, 93);
+}
+
+nav .auth-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .auth-menu .item {
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+nav .auth-menu .item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 15px 10px;
+  }
+
+  nav .left-section {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  nav .logo img {
+    width: 60px;
+  }
+
+  nav .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav .search-input {
+    width: 80%;
+    font-size: 0.85rem;
+  }
+
+  nav .center-menu {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 10px;
+    background: none;
+    padding: 0;
+  }
+
+  nav .center-menu .item {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  nav .auth-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
