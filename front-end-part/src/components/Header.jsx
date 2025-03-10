@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <nav>
       <div className="left-section">
-        <Link to="/home" className="logo">
+        <Link to="/" className="logo">
           <img src="/logo.png" alt="Littlest Pet Shop" />
         </Link>
         <div className="search-container">
