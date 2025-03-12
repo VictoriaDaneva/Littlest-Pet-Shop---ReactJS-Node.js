@@ -9,7 +9,7 @@ export default function Pet() {
             <img src="/primer1.png" alt="Nona" className="main-image" />
           </div>
           <div className="product-info">
-            <h1 itemprop="name">Nonka Slonka</h1>
+            <h1>Nonka Slonka</h1>
             <p className="product-breed" name="breed">
               breed: nonaka bonbonka
             </p>

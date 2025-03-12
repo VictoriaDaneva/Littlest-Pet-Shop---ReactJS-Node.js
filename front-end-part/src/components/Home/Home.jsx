@@ -69,9 +69,8 @@ export default function Home() {
               />
               <p className="product-title">Nona slona</p>
               <p className="product-breed">breed: idk</p>
-              <Link to="/profile">
-                <button className="wishlist-button">Add to Wishlist</button>
-              </Link>
+
+              <button className="wishlist-button">Add to Wishlist</button>
             </div>
           </Link>
         </div>
