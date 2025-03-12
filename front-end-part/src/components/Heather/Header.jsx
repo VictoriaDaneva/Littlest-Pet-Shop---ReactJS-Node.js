@@ -3,7 +3,7 @@ import "./Heather.css";
 
 const navigation = [
   { name: "Home", path: "/" },
-  { name: "Post", path: "/post" },
+  { name: "Create", path: "/create" },
   { name: "Pets", path: "/pets" },
   { name: "Login", path: "/login" },
   { name: "Sign Up", path: "/signUp" },

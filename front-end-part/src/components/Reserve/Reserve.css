@@ -1,0 +1,133 @@
+/* Adoption Container */
+.adopt-container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  /* Title Section */
+  .adopt-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #21b53c94;
+    color: white;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .close-btn:hover {
+    transform: rotate(90deg);
+    opacity: 0.8;
+  }
+  
+  /* Pet List Section */
+  .adopt-pets {
+    padding: 40px;
+  }
+  
+  /* No Items Text */
+  .no-items {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+    transition: transform 0.9s ease;
+  }
+  
+  /* Each Pet Block */
+  .adopt-pet {
+    display: flex;
+    align-items: center;
+    background: #b6dcc160;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Pet Image */
+  .adopt-pet-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Pet Details */
+  .adopt-pet-details {
+    flex-grow: 1;
+    margin-left: 16px;
+  }
+  
+  .pet-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .pet-info {
+    margin: 5px 0 0;
+    color: #555;
+  }
+  
+  /* Remove Button */
+  .remove-btn {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #a2252f;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .remove-btn:hover {
+    background: linear-gradient(to right, #a2252f, #f0b07b);
+    transform: scale(1.05);
+  }
+  
+  /* Footer */
+  .adopt-footer {
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+  
+  /* Adopt Now Button */
+  .adopt-now {
+    background: #27a147c5;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 17px 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .adopt-now:hover {
+    background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+    transform: scale(1.05);
+  }
+  

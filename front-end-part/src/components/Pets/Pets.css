@@ -1,0 +1,158 @@
+.catalog {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 20px;
+    background: #ffffffb3;
+  }
+  
+  .catalog header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .catalog h1 {
+    font-size: 2rem;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    font-size: 0.9rem;
+    background: #30824a;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+  }
+  
+  .dropbtn:hover {
+    background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #30824a;
+    transition: background 0.3s;
+  }
+  
+  .dropdown-content a img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .dropdown-content a:hover {
+    background: #e6f4ea;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .catalog p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .product-breed {
+    font-size: 1.1rem;
+    color: #187130d1;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+    margin-bottom: 35px;
+  }
+  
+  .details-button {
+    background: #187130d1;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .details-button:hover {
+    background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+  }
+
+  .button-link{
+    text-decoration: none;
+  }

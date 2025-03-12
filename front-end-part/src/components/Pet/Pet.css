@@ -1,0 +1,133 @@
+.main-image {
+    width: 100%;
+    height: 550px;
+    width: 550px;
+    border-radius: 10px;
+    padding-left: 350px;
+  }
+  
+  /* Product Details Page */
+  .product-details-page {
+    padding: 40px 20px;
+    background-color: #ffffffbd;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 70px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Center the main image */
+  .product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 45%;
+    max-width: 450px;
+    height: 100%;
+  }
+  
+  .product-info {
+    flex: 1 1 45%;
+    max-width: 600px;
+  }
+  
+  .product-description {
+    margin-top: 20px;
+  }
+  
+  .wishlist-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .wishlist-button,
+  .edit-button,
+  .delete-button {
+    background: #187130d1;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .wishlist-button:hover,
+  .edit-button:hover,
+  .delete-button:hover {
+    background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+  }
+  
+  /* Recommended Items Section */
+  .recommended-items {
+    margin-top: 50px;
+    background-color: #ffffffbd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recommended-items h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .product-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #187130d1;
+  }
+  
+  .product-breed {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  
+  .details-link {
+    font-size: 0.9rem;
+    color: #187130d1;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .details-link:hover {
+    text-decoration: underline;
+  }
