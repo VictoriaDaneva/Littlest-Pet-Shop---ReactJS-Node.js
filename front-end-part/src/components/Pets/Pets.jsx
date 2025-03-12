@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import './Pets.css'
+import "./Pets.css";
 
 export default function Pets() {
-    return(
-        <section className="catalog">
+  return (
+    <section className="catalog">
       <header>
         <h1>View all pets 🐾</h1>
         <p>Total Pets: 48</p>
@@ -11,7 +11,10 @@ export default function Pets() {
         <div className="dropdown">
           <button className="dropbtn">Select Pet Type</button>
           <div className="dropdown-content">
-            <Link to="/pets" data-filter="all"> All Pets</Link>
+            <Link to="/pets" data-filter="all">
+              {" "}
+              All Pets
+            </Link>
             <Link to="/dogs" data-filter="dog">
               <img src="/dog.png" alt="Dog" /> Dogs
             </Link>
@@ -28,33 +31,21 @@ export default function Pets() {
         </div>
       </header>
 
-      <div className="product-grid">
-      <Link to="/pet" className="button-link">
-        <article
-          className="product-card"
-        >
-          <img
-            src="/primer2.png"
-            alt="kotka"
-            class="product-image"
-          />
-          <div className="product-details">
-            <h2 className="product-name" >Macata</h2>
-            <p className="product-breed">breed: kote</p>
-            <p className="product-description" i>
-              A medium roast ground coffee, perfect for the holiday season.
-            </p>
-            
-            <button
-              className="details-button"
-            >
-              See More Details
-            </button>
-          </div>
-        </article>
+      <div className="products-grid">
+        <Link to="/pet" className="card-link">
+          <article className="product-card">
+            <img src="/primer2.png" alt="kotka" className="product-image" />
+            <div className="product-details">
+              <h2 className="product-name">Macata</h2>
+              <p className="product-breed">Breed: kote</p>
+              <p className="product-description">
+                A medium roast ground coffee, perfect for the holiday season.
+              </p>
+              <button className="details-button">See More Details</button>
+            </div>
+          </article>
         </Link>
-
       </div>
     </section>
-    )
+  );
 }

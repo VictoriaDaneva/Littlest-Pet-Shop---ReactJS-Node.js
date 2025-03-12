@@ -1,131 +1,131 @@
 .profile-card {
-    background: white;
-    margin: 100px auto;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .profile-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .profile-image img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .profile-right {
-    flex: 2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .profile-right h2 {
-    font-size: 22px;
-    color: #187130d1;
-  }
-  
-  .profile-right p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .edit-profile-btn {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 25px;
-    height: 40px;
-    border-radius: 25px;
-    font-size: 14px;
-    border: none;
-    background: #187130d1;
-    color: white;
-    transition: 0.9s ease-in-out;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .edit-profile-btn:hover {
-    background: linear-gradient(to right, #27a147c5, #feb2dcd3);
-  }
-  
-  /*wishlist*/
-  .recommended-items {
-    margin-top: 50px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .recommended-items h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 60px;
-    justify-content: center;
-  }
-  
-  .product-card {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-image {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 10px;
-  }
-  
-  .product-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #187130d1;
-  }
-  
-  .product-breed {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-accent);
-  }
-  
-  .details-link {
-    font-size: 0.9rem;
-    color: #187130d1;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-  }
-  
-  .details-link:hover {
-    text-decoration: underline;
-  }
+  background: white;
+  margin: 100px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+}
+
+.profile-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-image img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-right {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-right h2 {
+  font-size: 22px;
+  color: #187130d1;
+}
+
+.profile-right p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.edit-profile-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 25px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: none;
+  background: #187130d1;
+  color: white;
+  transition: 0.9s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
+
+/*wishlist*/
+.recommended-items {
+  margin-top: 50px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommended-items h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 100px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #187130d1;
+}
+
+.product-breed {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.details-link {
+  font-size: 0.9rem;
+  color: #187130d1;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
