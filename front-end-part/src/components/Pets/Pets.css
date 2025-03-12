@@ -137,10 +137,9 @@
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 3px;
 }
 
-/* Product Details */
 .product-details {
   width: 100%;
   display: flex;
@@ -164,11 +163,9 @@
 .product-description {
   font-size: 0.9rem;
   color: #666;
-  margin: 10px 0;
   text-align: center;
 }
 
-/* Centered Details Button */
 .details-button {
   background: #187130;
   color: white;
