@@ -1,0 +1,91 @@
+.card {
+  position: relative;
+  z-index: 3;
+  width: 94%;
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #187130d1;
+}
+
+.card textarea {
+  height: auto;
+}
+
+.form {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 90%;
+  height: 50px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ededed;
+  font-size: 14px;
+}
+.form select {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ededed;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.form select:focus {
+  outline: none;
+  border: 2px solid #187130;
+}
+.form textarea {
+  padding: 15px 20px;
+  resize: none;
+  height: auto;
+}
+
+.form input::placeholder,
+.form textarea::placeholder,
+.form select::placeholder {
+  color: #888;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.form button {
+  width: 45%;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: none;
+  background: #187130d1;
+  color: white;
+  transition: 0.9s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
