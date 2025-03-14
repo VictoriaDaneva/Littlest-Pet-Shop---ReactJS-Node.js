@@ -14,6 +14,7 @@ import Create from "./components/Create/Create";
 import Pet from "./components/Pet/Pet";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ErrorPage from "./components/404/404";
+import SearchPage from "./components/Search/Search";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/pet" element={<Pet />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
       <Footer />
     </>

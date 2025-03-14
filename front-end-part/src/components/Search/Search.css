@@ -1,0 +1,136 @@
+.search-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+  background: #f9f9f9e0;
+}
+
+.search-page header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-page h1 {
+  font-size: 2rem;
+  color: #0c4a19;
+}
+
+.product-grid-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.product-card-search {
+  flex: 1 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card-search:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-card-search img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-details-search {
+  margin-top: 10px;
+}
+
+.product-name-search {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0c4a19;
+  margin: 10px 0;
+}
+
+.product-description-search {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 10px 0;
+  margin-bottom: 35px;
+}
+
+.details-button-search {
+  background-color: #0c4a19;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.details-button-search:hover {
+  background: #ffd700;
+  color: #0c4a19;
+}
+
+.pet-card-link {
+  text-decoration: none;
+}
+
+.error {
+  color: rgb(164, 90, 90);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.no-results-image {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.no-results-text {
+  font-size: 1.8rem;
+  color: #0c4a19;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.no-results-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.redirect-button {
+  background-color: #0c4a19;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.redirect-button:hover {
+  background: #ffd700;
+  color: #0c4a19;
+}
