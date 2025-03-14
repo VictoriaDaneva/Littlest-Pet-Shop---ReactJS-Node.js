@@ -1,0 +1,39 @@
+.error-container {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.error-title {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #0c4a19;
+  margin-bottom: 20px;
+}
+
+.error-text {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0c4a19;
+}
+
+.error-text-small {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.home-button-err {
+  display: inline-block;
+  background: #0c4a19;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.home-button-err:hover {
+  background: #ffd700;
+  color: #0c4a19;
+}

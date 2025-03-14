@@ -13,6 +13,7 @@ import Pets from "./components/Pets/Pets";
 import Create from "./components/Create/Create";
 import Pet from "./components/Pet/Pet";
 import ThankYou from "./components/ThankYou/ThankYou";
+import ErrorPage from "./components/404/404";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/pet" element={<Pet />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </>
