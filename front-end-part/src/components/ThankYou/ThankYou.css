@@ -1,0 +1,50 @@
+.thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 150px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9c5;
+}
+
+.thank-you-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.thank-you-image {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.thank-you-h1 {
+  font-size: 2.5rem;
+  color: #ff9cbd;
+  margin-bottom: 10px;
+}
+
+.thank-you-p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.home-button {
+  background-color: #ff9cbd;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #ed5688;
+}

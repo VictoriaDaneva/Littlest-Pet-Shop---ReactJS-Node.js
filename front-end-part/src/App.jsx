@@ -12,6 +12,7 @@ import ChekOut from "./components/ChekOut/ChekOut";
 import Pets from "./components/Pets/Pets";
 import Create from "./components/Create/Create";
 import Pet from "./components/Pet/Pet";
+import ThankYou from "./components/ThankYou/ThankYou";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/pets" element={<Pets />} />
         <Route path="/create" element={<Create />} />
         <Route path="/pet" element={<Pet />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
       <Footer />
     </>

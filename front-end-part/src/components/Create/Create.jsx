@@ -53,7 +53,6 @@ export default function Create() {
           onChange={handleChange}
         />
 
-        {/* React-friendly select dropdown */}
         <select
           name="petType"
           required

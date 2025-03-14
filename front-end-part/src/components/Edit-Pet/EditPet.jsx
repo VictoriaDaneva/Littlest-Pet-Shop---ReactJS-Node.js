@@ -1,8 +1,8 @@
 export default function editPet() {
   return (
-    <div class="card">
+    <div className="card">
       <h2>Edit a Pet Information</h2>
-      <form action="/update-product" method="post" class="form">
+      <form action="/update-product" method="post" className="form">
         <input
           type="url"
           id="image-url"
@@ -53,13 +53,9 @@ export default function editPet() {
           rows="3"
           required
         ></textarea>
-        <div class="button-group">
+        <div className="button-group">
           <button type="submit">Save Changes</button>
-          <button
-            type="button"
-            class="cancel-btn"
-            onclick="window.location.href='/products'"
-          >
+          <button type="button" className="cancel-btn">
             Cancel
           </button>
         </div>
