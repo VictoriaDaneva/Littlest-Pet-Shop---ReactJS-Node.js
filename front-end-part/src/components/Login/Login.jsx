@@ -1,16 +1,52 @@
-import { Link } from "react-router";
-import './Login.css';
-//value=""
+import { Link, useNavigate } from "react-router";
+import "./Login.css";
+import { useActionState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
+import { useLogin } from "../../api/authApi";
+
 export default function Login() {
-    return(
-        <div className="card">
+  const navigate = useNavigate();
+  const { userLoginHandler } = useContext(UserContext);
+  const { login } = useLogin();
+
+  const loginHandler = async (_, formData) => {
+    const values = Object.fromEntries(formData);
+    const authData = await login(values.email, values.password);
+    userLoginHandler(authData);
+    navigate(-1);
+  };
+
+  const [_, loginAction, isPending] = useActionState(loginHandler, {
+    email: "",
+    password: "",
+  });
+
+  return (
+    <div className="card">
       <h2>Login</h2>
-      <form action="" className="form">
-        <input type="email" placeholder="email"  />
-        <input type="password" placeholder="password" />
-        <button className="loginButton">Sign in</button>
+      <form action={loginAction} className="form">
+        <input type="email" placeholder="email" name="email" id="email" />
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
+          id="password"
+        />
+        <button
+          type="submit"
+          className="loginButton"
+          value="Login"
+          disabled={isPending}
+        >
+          Sign in
+        </button>
       </form>
-      <p className="footer">Need an account? Sign up <Link to="/signUp" className="link">here</Link></p>
+      <p className="footer">
+        Need an account? Sign up{" "}
+        <Link to="/signUp" className="link">
+          here
+        </Link>
+      </p>
     </div>
-    )
+  );
 }
