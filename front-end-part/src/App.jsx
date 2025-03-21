@@ -18,6 +18,7 @@ import SearchPage from "./components/Search/Search";
 import UserProvider from "./providers/UserProviders";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestRouter";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/checkOut" element={<ChekOut />} />
           <Route path="/create" element={<Create />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/logout" element={<Logout />} />
         </Route>
 
         <Route element={<GuestGuard />}>

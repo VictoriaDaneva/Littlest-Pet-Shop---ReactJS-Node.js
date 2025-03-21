@@ -28,11 +28,11 @@ export default function Register() {
       password
     );
 
-    console.log("Auth Data after Register:", authData); // ✅ Debugging Step
+    console.log("Auth Data after Register:", authData);
 
     if (authData && authData.accessToken) {
-      userLoginHandler(authData); // ✅ Update the context state
-      navigate("/"); // ✅ Redirect to home
+      userLoginHandler(authData);
+      navigate("/");
     } else {
       console.error("Registration failed: No accessToken received");
     }
