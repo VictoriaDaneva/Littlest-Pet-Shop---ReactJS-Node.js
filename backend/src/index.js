@@ -18,7 +18,7 @@ app.use(
 //setup db
 const url = "mongodb://localhost:27017";
 mongoose
-  .connect(url, { dbName: "Coffee" })
+  .connect(url, { dbName: "Pets" })
   .then(console.log(`DB Connected!`))
   .catch((err) => console.log(`DB Failed! ${err}`)); //setup the name based on the project
 
