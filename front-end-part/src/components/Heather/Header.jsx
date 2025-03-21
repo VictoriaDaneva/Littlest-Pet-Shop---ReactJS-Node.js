@@ -1,18 +1,9 @@
 import { Link, NavLink } from "react-router";
 import "./Heather.css";
-
-const navigation = [
-  { name: "Home", path: "/" },
-  { name: "Create", path: "/create" },
-  { name: "Pets", path: "/pets" },
-  { name: "Login", path: "/login" },
-  { name: "Sign Up", path: "/signUp" },
-  { name: "Profile", path: "/profile" },
-  { name: "Reserve", path: "/reserve" },
-  { name: "Logout", path: "Logout" },
-];
+import useAuth from "../../hooks/useAuth";
 
 export default function Header() {
+  const { isAuthenticated } = useAuth();
   return (
     <nav>
       <div className="left-section">
@@ -30,19 +21,40 @@ export default function Header() {
         </div>
       </div>
       <div className="center-menu">
-        {navigation.slice(0, 3).map((item) => (
-          <NavLink key={item.name} to={item.path} className="item">
-            {item.name}
-          </NavLink>
-        ))}
+        <Link className="item" to="/">
+          Home
+        </Link>
+        <Link className="item" to="/pets">
+          Pets
+        </Link>
       </div>
 
       <div className="auth-menu">
-        {navigation.slice(3).map((item) => (
-          <NavLink key={item.name} to={item.path} className="item">
-            {item.name}
-          </NavLink>
-        ))}
+        {isAuthenticated ? (
+          <>
+            <Link className="item" to="/create">
+              Post
+            </Link>
+            <Link className="item" to="/profile">
+              Profile
+            </Link>
+            <Link className="item" to="/reserve">
+              Reserve
+            </Link>
+            <Link className="item" to="/logout">
+              Logout
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link className="item" to="/login">
+              Login
+            </Link>
+            <Link className="item" to="/signUp">
+              Sign Up
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
