@@ -15,28 +15,37 @@ import Pet from "./components/Pet/Pet";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ErrorPage from "./components/404/404";
 import SearchPage from "./components/Search/Search";
+import UserProvider from "./providers/UserProviders";
+import AuthGuard from "./guards/AuthGuard";
+import GuestGuard from "./guards/GuestRouter";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signUp" element={<Register />} />
-        <Route path="/reserve" element={<Reserve />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/checkOut" element={<ChekOut />} />
         <Route path="/pets" element={<Pets />} />
-        <Route path="/create" element={<Create />} />
         <Route path="/pet" element={<Pet />} />
-        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/search" element={<SearchPage />} />
+
+        <Route element={<AuthGuard />}>
+          <Route path="/reserve" element={<Reserve />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/checkOut" element={<ChekOut />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+        </Route>
+
+        <Route element={<GuestGuard />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signUp" element={<Register />} />
+        </Route>
       </Routes>
       <Footer />
-    </>
+    </UserProvider>
   );
 }
 export default App;
