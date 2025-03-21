@@ -28,9 +28,14 @@ export default function Register() {
       password
     );
 
-    userLoginHandler(authData);
+    console.log("Auth Data after Register:", authData); // ✅ Debugging Step
 
-    navigate("/");
+    if (authData && authData.accessToken) {
+      userLoginHandler(authData); // ✅ Update the context state
+      navigate("/"); // ✅ Redirect to home
+    } else {
+      console.error("Registration failed: No accessToken received");
+    }
   };
   return (
     <div className="card">

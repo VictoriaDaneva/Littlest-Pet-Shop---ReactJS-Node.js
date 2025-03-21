@@ -18,7 +18,7 @@ authController.post("/register", isGuest, async (req, res) => {
       password,
       rePassword,
     } = req.body;
-    const { User, token } = await authService.register(
+    const { User, accessToken } = await authService.register(
       imageUrl,
       username,
       email,
@@ -27,12 +27,12 @@ authController.post("/register", isGuest, async (req, res) => {
       password,
       rePassword
     );
-    res.cookie(AUTH_COOKIE_NAME, token, {
+    res.cookie(AUTH_COOKIE_NAME, accessToken, {
       httpOnly: true,
       sameSite: "none",
       secure: true,
     });
-    return res.status(201).json({ User, token });
+    return res.status(201).json({ User, accessToken });
   } catch (err) {
     const error = getErrrorMessage(err);
     console.log(err);
@@ -46,15 +46,15 @@ authController.post("/login", isGuest, async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const { User, token } = await authService.login(email, password);
+    const { User, accessToken } = await authService.login(email, password);
 
-    res.cookie(AUTH_COOKIE_NAME, token, {
+    res.cookie(AUTH_COOKIE_NAME, accessToken, {
       httpOnly: true,
       sameSite: "none",
       secure: true,
     });
 
-    res.status(200).json({ User, token });
+    res.status(200).json({ User, accessToken });
   } catch (err) {
     const error = getErrrorMessage(err);
     console.log(err);
