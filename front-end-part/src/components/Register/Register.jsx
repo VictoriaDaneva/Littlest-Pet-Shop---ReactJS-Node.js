@@ -1,21 +1,77 @@
-import { Link } from "react-router";
-import './Register.css'
-
+import { Link, useNavigate } from "react-router";
+import "./Register.css";
+import { useRegister } from "../../api/authApi";
+import { useUserContext } from "../../contexts/UserContext";
 
 export default function Register() {
-    return(
-        <div className="card">
+  const navigate = useNavigate();
+  const { register } = useRegister();
+  const { userLoginHandler } = useUserContext();
+
+  const registerHandler = async (formData) => {
+    const { username, email, phoneNumber, address, password } =
+      Object.fromEntries(formData);
+
+    const confirmPassword = formData.get("confirm-password");
+
+    if (password !== confirmPassword) {
+      console.log("Password missmatch");
+
+      return;
+    }
+
+    const authData = await register(
+      username,
+      email,
+      phoneNumber,
+      address,
+      password
+    );
+
+    userLoginHandler(authData);
+
+    navigate("/");
+  };
+  return (
+    <div className="card">
       <h2>Register</h2>
-      <form action="" className="form">
-        <input type="text" placeholder="Username" />
-        <input type="email" placeholder="Email" />
-        <input type="tel" placeholder="Phone Number" />
-        <input type="text" placeholder="Address" />
-        <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Repeat Password" />
-        <button className="registerButton">Register</button>
+      <form action={registerHandler} className="form">
+        <input
+          type="text"
+          placeholder="Username"
+          id="username"
+          name="username"
+        />
+        <input type="email" placeholder="Email" id="email" name="email" />
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          id="phoneNumber"
+          name="phoneNumber"
+        />
+        <input type="text" placeholder="Address" id="address" name="address" />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="register-password"
+        />
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="confirm-password"
+          id="confirm-password"
+        />
+        <button className="registerButton" type="submit" value="Register">
+          Register
+        </button>
       </form>
-      <p className="footer">Already have an account? <Link to="/login" className="link">Log in here</Link></p>
+      <p className="footer">
+        Already have an account?{" "}
+        <Link to="/login" className="link">
+          Log in here
+        </Link>
+      </p>
     </div>
-    )
+  );
 }

@@ -21,20 +21,9 @@ const authService = {
     return user.findOne({ _id: userId }, { password: 0, __v: 0 }).lean();
   },
 
-  async register(
-    imageUrl,
-    username,
-    email,
-    phoneNumber,
-    address,
-    password,
-    rePassword
-  ) {
+  async register(imageUrl, username, email, phoneNumber, address, password) {
     const User = await user.findOne({ $or: [{ email }, { username }] });
 
-    if (rePassword !== password) {
-      throw new Error("Passwords missmatch!!!");
-    }
     if (User) {
       throw new Error("User already exists!!!");
     }

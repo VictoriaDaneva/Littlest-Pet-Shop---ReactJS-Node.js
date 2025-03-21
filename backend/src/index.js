@@ -10,7 +10,7 @@ const PORT = 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:4200", // Allow requests from Angular dev server
+    origin: "http://localhost:5173", // Allow requests from Angular dev server
     credentials: true, // Allow cookies and authentication headers
   })
 );
