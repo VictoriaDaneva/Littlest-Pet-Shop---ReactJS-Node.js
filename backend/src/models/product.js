@@ -9,18 +9,23 @@ const productSchema = new Schema({
     type: String,
     required: [true, "The product tittle is requered!!"],
   },
-  price: {
+  breed: {
     type: String,
     required: [true, "Price is requered!!"],
   },
-  type: {
+  author: {
     type: String,
     required: [true, "The product type is requered!!"],
+  },
+  petType: {
+    type: String,
+    required: [true, "petType is requered!!"],
   },
   description: {
     type: String,
     required: [true, "Description is requered!!"],
   },
+
   likes: [
     {
       type: Types.ObjectId,

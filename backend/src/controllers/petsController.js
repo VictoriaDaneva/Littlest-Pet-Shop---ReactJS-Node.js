@@ -1,5 +1,5 @@
 import { Router } from "express";
-import coffeeService from "../services/coffeeService.js";
+import coffeeService from "../services/petsService.js";
 import { getErrrorMessage } from "../utils/errorUtils.js";
 import { isAuth } from "../middleware/authMiddleware.js";
 
@@ -107,6 +107,7 @@ coffeeController.get("/", async (req, res) => {
 coffeeController.post("/", isAuth, async (req, res) => {
   const coffeeData = req.body;
   const userId = req.user;
+  console.log("Received userId in coffeeController:", userId);
 
   try {
     const createdProduct = await coffeeService.create(coffeeData, userId);

@@ -1,64 +1,34 @@
-import { Link } from "react-router";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router";
 import "./Create.css";
+import { createPet } from "../../api/petsApi";
 
 export default function Create() {
-  const [formData, setFormData] = useState({
-    imageUrl: "",
-    title: "",
-    breed: "",
-    author: "",
-    petType: "",
-    description: "",
-  });
+  const navigate = useNavigate();
+  const postPet = createPet();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const submitAction = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const petData = Object.fromEntries(formData);
+
+    try {
+      await postPet(petData);
+      navigate("/pets");
+    } catch (error) {
+      console.error("Failed to create pet:", error);
+    }
   };
 
   return (
     <div className="card">
       <h2>Post a Pet</h2>
-      <form className="form">
-        <input
-          type="url"
-          name="imageUrl"
-          placeholder="Image URL"
-          required
-          value={formData.imageUrl}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="title"
-          placeholder="Pet Name"
-          required
-          value={formData.title}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="breed"
-          placeholder="Pet Breed"
-          required
-          value={formData.breed}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Author"
-          required
-          value={formData.author}
-          onChange={handleChange}
-        />
+      <form onSubmit={submitAction} className="form">
+        <input type="url" name="imageUrl" placeholder="Image URL" required />
+        <input type="text" name="title" placeholder="Pet Name" required />
+        <input type="text" name="breed" placeholder="Pet Breed" required />
+        <input type="text" name="author" placeholder="Author" required />
 
-        <select
-          name="petType"
-          required
-          value={formData.petType}
-          onChange={handleChange}
-        >
+        <select name="petType" required>
           <option value="" disabled>
             Select Pet Type
           </option>
@@ -73,15 +43,12 @@ export default function Create() {
           placeholder="Description"
           rows="3"
           required
-          value={formData.description}
-          onChange={handleChange}
         ></textarea>
 
         <div className="button-group">
           <button type="submit" className="buttonCreate">
             Create
           </button>
-
           <Link to="/pets" className="buttonCreate linkButton">
             Cancel
           </Link>

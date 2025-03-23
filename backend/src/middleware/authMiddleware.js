@@ -2,21 +2,24 @@ import { AUTH_COOKIE_NAME } from "../constants.js";
 import jwt from "../lib/jwt.js";
 
 export const authMiddleware = async (req, res, next) => {
-  const token = req.cookies[AUTH_COOKIE_NAME];
+  const token = req.cookies[AUTH_COOKIE_NAME] || req.headers["x-authorization"];
 
   if (!token) {
-    return next();
+    console.warn("No authentication token found");
+    next(); // ✅ Fix: Remove `return`
+    return;
   }
 
   try {
     const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decodedToken;
+    req.user = decodedToken._id;
     req.isAuthenticated = true;
-    return next();
+    console.log("Authenticated User:", req.user); // ✅ Debugging Step
+    next(); // ✅ Fix: Remove `return`
   } catch (err) {
+    console.error("Authentication Error:", err);
     res.clearCookie(AUTH_COOKIE_NAME);
-    console.log(err);
-    return next();
+    res.status(401).json({ message: "Unauthorized: Invalid token" });
   }
 };
 

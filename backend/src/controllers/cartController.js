@@ -1,5 +1,5 @@
 import { Router } from "express";
-import coffeeService from "../services/coffeeService.js";
+import coffeeService from "../services/petsService.js";
 import { getErrrorMessage } from "../utils/errorUtils.js";
 import { isAuth } from "../middleware/authMiddleware.js";
 
