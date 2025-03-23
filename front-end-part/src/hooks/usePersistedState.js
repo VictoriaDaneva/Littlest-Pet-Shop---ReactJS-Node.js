@@ -14,7 +14,7 @@ export default function usePersistedState(stateKey, initialState) {
     console.log(
       `Loaded state from localStorage [${stateKey}]:`,
       persistedStateData
-    ); // ✅ Debugging Step
+    );
 
     return persistedStateData;
   });
@@ -22,7 +22,7 @@ export default function usePersistedState(stateKey, initialState) {
   const setPersistedState = (input) => {
     const data = typeof input === "function" ? input(state) : input;
 
-    console.log(`Saving state to localStorage [${stateKey}]:`, data); // ✅ Debugging Step
+    console.log(`Saving state to localStorage [${stateKey}]:`, data);
 
     localStorage.setItem(stateKey, JSON.stringify(data));
     setState(data);

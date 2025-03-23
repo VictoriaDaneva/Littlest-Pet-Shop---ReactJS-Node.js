@@ -5,8 +5,6 @@ export default function UserProvider({ children }) {
   const [authData, setAuthData] = usePersistedState("auth", {});
 
   const userLoginHandler = (resultData) => {
-    console.log("Logging in with data:", resultData);
-
     if (!resultData || typeof resultData !== "object") {
       console.error("Error: Invalid resultData format!", resultData);
       return;
@@ -25,7 +23,6 @@ export default function UserProvider({ children }) {
       userId: resultData._id.toString(),
     };
 
-    console.log("Formatted Auth Data:", formattedData);
     setAuthData(formattedData);
   };
 

@@ -29,8 +29,6 @@ export const useProfile = () => {
         options
       );
 
-      console.log("Fetched profile data:", profileData);
-
       if (!profileData || !profileData._id) {
         console.warn("Skipping userLoginHandler(): Missing _id", profileData);
         return;
