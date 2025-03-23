@@ -2,6 +2,8 @@ import { createContext, useContext } from "react";
 
 export const UserContext = createContext({
   _id: "",
+  userId: "",
+  imageUrl: "",
   email: "",
   username: "",
   phoneNumber: "",

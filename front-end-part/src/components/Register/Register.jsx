@@ -9,7 +9,7 @@ export default function Register() {
   const { userLoginHandler } = useUserContext();
 
   const registerHandler = async (formData) => {
-    const { username, email, phoneNumber, address, password } =
+    const { username, email, phoneNumber, imageUrl, address, password } =
       Object.fromEntries(formData);
 
     const confirmPassword = formData.get("confirm-password");
@@ -24,18 +24,28 @@ export default function Register() {
       username,
       email,
       phoneNumber,
+      imageUrl,
       address,
       password
     );
 
     console.log("Auth Data after Register:", authData);
 
-    if (authData && authData.accessToken) {
-      userLoginHandler(authData);
-      navigate("/");
-    } else {
-      console.error("Registration failed: No accessToken received");
+    if (!authData || !authData.accessToken || !authData.User?._id) {
+      console.error("Registration failed: Missing token or user ID", authData);
+      return;
     }
+
+    const formattedAuthData = {
+      ...authData.User,
+      accessToken: authData.accessToken,
+      userId: authData.User._id,
+    };
+
+    console.log("Formatted Auth Data:", formattedAuthData);
+
+    userLoginHandler(formattedAuthData);
+    navigate("/");
   };
   return (
     <div className="card">
@@ -53,6 +63,12 @@ export default function Register() {
           placeholder="Phone Number"
           id="phoneNumber"
           name="phoneNumber"
+        />
+        <input
+          type="text"
+          placeholder="ImageUrl"
+          id="imageUrl"
+          name="imageUrl"
         />
         <input type="text" placeholder="Address" id="address" name="address" />
         <input

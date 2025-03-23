@@ -54,11 +54,13 @@ authController.post("/login", isGuest, async (req, res) => {
       secure: true,
     });
 
-    res.status(200).json({ User, accessToken });
+    const formattedUser = User.toObject();
+    formattedUser._id = formattedUser._id.toString();
+
+    res.status(200).json({ User: formattedUser, accessToken });
   } catch (err) {
     const error = getErrrorMessage(err);
     console.log(err);
-
     res.status(400).json({ message: error });
   }
 });

@@ -5,10 +5,32 @@ export default function UserProvider({ children }) {
   const [authData, setAuthData] = usePersistedState("auth", {});
 
   const userLoginHandler = (resultData) => {
-    setAuthData(resultData);
+    console.log("Logging in with data:", resultData);
+
+    if (!resultData || typeof resultData !== "object") {
+      console.error("Error: Invalid resultData format!", resultData);
+      return;
+    }
+
+    if (!("_id" in resultData)) {
+      console.error(
+        "Error: User ID (_id) is missing in login data!",
+        resultData
+      );
+      return;
+    }
+
+    const formattedData = {
+      ...resultData,
+      userId: resultData._id.toString(),
+    };
+
+    console.log("Formatted Auth Data:", formattedData);
+    setAuthData(formattedData);
   };
 
   const userLogoutHandler = () => {
+    console.log("Logging out...");
     setAuthData({});
   };
 

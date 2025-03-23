@@ -12,7 +12,20 @@ export default function Login() {
   const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
     const authData = await login(values.email, values.password);
-    userLoginHandler(authData);
+
+    if (!authData || !authData.accessToken || !authData.User?._id) {
+      console.error("Login failed: Missing token or user ID", authData);
+      return;
+    }
+
+    const formattedAuthData = {
+      ...authData.User,
+      accessToken: authData.accessToken,
+      userId: authData.User._id,
+    };
+    console.log("Formatted Login Data:", formattedAuthData);
+
+    userLoginHandler(formattedAuthData);
     navigate(-1);
   };
 

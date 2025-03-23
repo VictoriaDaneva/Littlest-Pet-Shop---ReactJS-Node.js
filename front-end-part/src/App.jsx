@@ -7,7 +7,6 @@ import About from "./components/About-us/About-us";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Reserve from "./components/Reserve/Reserve";
-import Profile from "./components/Profile/Profile";
 import ChekOut from "./components/ChekOut/ChekOut";
 import Pets from "./components/Pets/Pets";
 import Create from "./components/Create/Create";
@@ -19,6 +18,7 @@ import UserProvider from "./providers/UserProviders";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestRouter";
 import Logout from "./components/Logout/Logout";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
