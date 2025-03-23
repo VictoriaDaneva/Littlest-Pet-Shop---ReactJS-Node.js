@@ -5,6 +5,25 @@ import { UserContext, useUserContext } from "../contexts/UserContext";
 
 const baseUrl = "http://localhost:3000/api";
 
+export const editProfile = async (userId, updatedData, accessToken) => {
+  try {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    return await request.put(
+      `${baseUrl}/users/profile/edit/${userId}`,
+      updatedData,
+      options
+    );
+  } catch (error) {
+    console.error("Error updating profile:", error);
+    throw error;
+  }
+};
+
 export const useProfile = () => {
   const { userId, accessToken, userLoginHandler } = useUserContext();
 

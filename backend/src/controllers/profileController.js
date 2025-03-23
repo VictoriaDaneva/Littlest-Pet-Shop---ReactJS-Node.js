@@ -53,14 +53,15 @@ profileController.get("/:userId", authMiddleware, async (req, res) => {
 });
 
 //Update Profile
-profileController.post("/edit", isAuth, async (req, res) => {
-  const userId = req.user._id;
+profileController.put("/edit/:userId", async (req, res) => {
+  const userId = req.params.userId;
   const userData = req.body;
+
   try {
-    const data = await authService.editProfile(userId, userData);
-    return res.status(200).json(data);
+    const updatedUser = await authService.editProfile(userId, userData);
+    return res.status(200).json(updatedUser);
   } catch (err) {
-    console.error(err.message);
+    console.error("Profile update error:", err.message);
     const error = getErrrorMessage(err);
     return res.status(400).json({ message: error });
   }

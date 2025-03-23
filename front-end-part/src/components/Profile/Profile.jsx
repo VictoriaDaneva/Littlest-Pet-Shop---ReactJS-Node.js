@@ -40,7 +40,9 @@ export default function Profile() {
           <p>
             <strong>Address:</strong> {address}
           </p>
-          <button className="edit-profile-btn">Edit Profile</button>
+          <Link to={`/profile/edit/${userId}`}>
+            <button className="edit-profile-btn">Edit Profile</button>
+          </Link>
         </div>
       </div>
 

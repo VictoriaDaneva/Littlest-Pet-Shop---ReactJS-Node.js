@@ -19,6 +19,7 @@ import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestRouter";
 import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
+import EditProfile from "./components/Edit-Profile/EditProfile";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route element={<AuthGuard />}>
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit/:userId" element={<EditProfile />} />
           <Route path="/checkOut" element={<ChekOut />} />
           <Route path="/create" element={<Create />} />
           <Route path="/thank-you" element={<ThankYou />} />
