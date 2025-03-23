@@ -107,7 +107,6 @@ coffeeController.get("/", async (req, res) => {
 coffeeController.post("/", isAuth, async (req, res) => {
   const coffeeData = req.body;
   const userId = req.user;
-  console.log("Received userId in coffeeController:", userId);
 
   try {
     const createdProduct = await coffeeService.create(coffeeData, userId);

@@ -6,7 +6,7 @@ export const authMiddleware = async (req, res, next) => {
 
   if (!token) {
     console.warn("No authentication token found");
-    next(); // ✅ Fix: Remove `return`
+    next();
     return;
   }
 
@@ -14,8 +14,8 @@ export const authMiddleware = async (req, res, next) => {
     const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
     req.user = decodedToken._id;
     req.isAuthenticated = true;
-    console.log("Authenticated User:", req.user); // ✅ Debugging Step
-    next(); // ✅ Fix: Remove `return`
+    console.log("Authenticated User:", req.user);
+    next();
   } catch (err) {
     console.error("Authentication Error:", err);
     res.clearCookie(AUTH_COOKIE_NAME);
