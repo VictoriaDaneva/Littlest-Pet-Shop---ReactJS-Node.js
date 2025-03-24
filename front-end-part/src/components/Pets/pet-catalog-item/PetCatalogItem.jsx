@@ -1,12 +1,6 @@
 import { Link } from "react-router";
 
-export default function PetCatalogItem({
-  _id,
-  imageUrl,
-  title,
-  breed,
-  description,
-}) {
+export default function PetCatalogItem({ _id, imageUrl, title, breed }) {
   return (
     <div className="products-grid">
       <Link to={`/pets/${_id}/details`} className="card-link">
@@ -15,7 +9,6 @@ export default function PetCatalogItem({
           <div className="product-details">
             <h2 className="product-name">{title}</h2>
             <p className="product-breed">Breed: {breed}</p>
-            <p className="product-description">{description}</p>
             <button className="details-button">See More Details</button>
           </div>
         </article>

@@ -2,8 +2,6 @@ import { AUTH_COOKIE_NAME } from "../constants.js";
 import jwt from "../lib/jwt.js";
 
 export const authMiddleware = async (req, res, next) => {
-  console.log("🔍 Incoming Request Headers:", req.headers); // ✅ Debugging Step
-
   const token = req.cookies[AUTH_COOKIE_NAME] || req.headers["x-authorization"];
 
   if (!token) {

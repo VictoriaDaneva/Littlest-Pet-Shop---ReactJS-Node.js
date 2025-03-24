@@ -20,6 +20,7 @@ import GuestGuard from "./guards/GuestRouter";
 import Logout from "./components/Logout/Logout";
 import Profile from "./components/Profile/Profile";
 import EditProfile from "./components/Edit-Profile/EditProfile";
+import EditPet from "./components/Edit-Pet/EditPet";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit/:userId" element={<EditProfile />} />
+          <Route path="/pets/:petId/edit" element={<EditPet />} />
           <Route path="/checkOut" element={<ChekOut />} />
           <Route path="/create" element={<Create />} />
           <Route path="/thank-you" element={<ThankYou />} />

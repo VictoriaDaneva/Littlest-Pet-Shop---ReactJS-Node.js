@@ -33,11 +33,13 @@ export default function Pets() {
           </div>
         </div>
       </header>
-      {pets.length > 0 ? (
-        pets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
-      ) : (
-        <h3 className="no-pets">No pets yet</h3>
-      )}
+      <div className="items-section">
+        {pets.length > 0 ? (
+          pets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+        ) : (
+          <h3 className="no-pets">No pets yet</h3>
+        )}
+      </div>
     </section>
   );
 }

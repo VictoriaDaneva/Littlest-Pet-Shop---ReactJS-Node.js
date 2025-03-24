@@ -92,15 +92,16 @@
     transform: translateY(0);
   }
 }
-
+.items-section {
+  display: flex;
+  gap: 30px;
+}
 /* Product Grid */
 .products-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  min-height: 60vh; /* Helps with centering */
 }
 
 /* Make the entire card a clickable link */
@@ -115,7 +116,8 @@
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 320px;
+  width: 270px;
+  height: 400px;
   padding: 20px;
   margin-top: 20px;
   text-align: center;
@@ -134,7 +136,7 @@
 /* Product Image */
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 3px;

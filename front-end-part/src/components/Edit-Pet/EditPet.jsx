@@ -1,8 +1,8 @@
-export default function editPet() {
+export default function EditPet() {
   return (
     <div className="card">
       <h2>Edit a Pet Information</h2>
-      <form action="/update-product" method="post" className="form">
+      <form action="" method="post" className="form">
         <input
           type="url"
           id="image-url"
