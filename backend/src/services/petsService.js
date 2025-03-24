@@ -2,7 +2,7 @@ import Order from "../models/order.js";
 import Product from "../models/product.js";
 import user from "../models/user.js";
 
-const coffeeService = {
+const petsService = {
   search(query) {
     return Product.find({ title: { $regex: query, $options: "i" } });
   },
@@ -89,8 +89,8 @@ const coffeeService = {
     return Product.findByIdAndDelete(productId);
   },
 
-  editProduct(coffeeParams, productId) {
-    return Product.findByIdAndUpdate(productId, coffeeParams, {
+  editProduct(petParams, productId) {
+    return Product.findByIdAndUpdate(productId, petParams, {
       runValidators: true,
       new: true,
     });
@@ -112,9 +112,9 @@ const coffeeService = {
     );
   },
 
-  create(coffeeData, userId) {
-    return Product.create({ ...coffeeData, owner: userId });
+  create(petData, userId) {
+    return Product.create({ ...petData, owner: userId });
   },
 };
 
-export default coffeeService;
+export default petsService;

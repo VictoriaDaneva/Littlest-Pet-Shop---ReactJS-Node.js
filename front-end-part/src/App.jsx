@@ -29,7 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/pets" element={<Pets />} />
-        <Route path="/pet" element={<Pet />} />
+        <Route path="/pets/:petId/details" element={<Pet />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/search" element={<SearchPage />} />
 

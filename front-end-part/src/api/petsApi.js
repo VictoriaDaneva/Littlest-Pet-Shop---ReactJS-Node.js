@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import request from "../utils/request";
 
@@ -21,4 +22,14 @@ export const createPet = () => {
       throw error;
     }
   };
+};
+
+export const getPets = () => {
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    request.get(baseUrl).then(setPets);
+  }, []);
+
+  return { pets };
 };

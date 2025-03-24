@@ -1,12 +1,15 @@
 import { Link } from "react-router";
 import "./Pets.css";
+import { getPets } from "../../api/petsApi";
+import PetCatalogItem from "./pet-catalog-item/PetCatalogItem";
 
 export default function Pets() {
+  const { pets } = getPets();
   return (
     <section className="catalog">
       <header>
         <h1>View all pets 🐾</h1>
-        <p>Total Pets: 48</p>
+        <p>Total Pets: {pets.length}</p>
 
         <div className="dropdown">
           <button className="dropbtn">Select Pet Type</button>
@@ -30,22 +33,11 @@ export default function Pets() {
           </div>
         </div>
       </header>
-
-      <div className="products-grid">
-        <Link to="/pet" className="card-link">
-          <article className="product-card">
-            <img src="/primer2.png" alt="kotka" className="product-image" />
-            <div className="product-details">
-              <h2 className="product-name">Macata</h2>
-              <p className="product-breed">Breed: kote</p>
-              <p className="product-description">
-                A medium roast ground coffee, perfect for the holiday season.
-              </p>
-              <button className="details-button">See More Details</button>
-            </div>
-          </article>
-        </Link>
-      </div>
+      {pets.length > 0 ? (
+        pets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+      ) : (
+        <h3 className="no-pets">No pets yet</h3>
+      )}
     </section>
   );
 }
