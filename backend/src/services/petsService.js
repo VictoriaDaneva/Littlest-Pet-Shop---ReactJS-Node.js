@@ -77,10 +77,10 @@ const petsService = {
   removeFromUserProduct(userId, productId) {
     return user.findByIdAndUpdate(
       userId,
-      { $pull: { products: productId } }, // Pull productId from products array
+      { $pull: { posts: productId } },
       {
         runValidators: true,
-        new: true, // Return the updated document
+        new: true,
       }
     );
   },

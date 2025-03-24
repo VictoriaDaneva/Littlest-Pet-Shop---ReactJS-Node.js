@@ -1,33 +1,64 @@
-import { Link } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import "./Pet.css";
+import useAuth from "../../hooks/useAuth";
+import { getPet, useDeletePet } from "../../api/petsApi";
 export default function Pet() {
+  const navigate = useNavigate();
+  const { userId, isAuthenticated } = useAuth();
+  const { petId } = useParams();
+  const { pet } = getPet(petId);
+  const deletePet = useDeletePet();
+
+  if (!pet) {
+    return <p>Loading...</p>;
+  }
+  const petDeleteClickHandler = async () => {
+    const hasConfirm = confirm(`Are you sure you want to delete ${pet.title}?`);
+    if (!hasConfirm) return;
+
+    await deletePet(petId);
+    navigate("/pets");
+  };
+  const isOwner = userId === pet.owner;
+
   return (
     <>
       <section className="product-details-page">
         <div className="product-details-pet">
           <div className="product-image">
-            <img src="/primer1.png" alt="Nona" className="main-image" />
+            <img src={pet.imageUrl} alt="Nona" className="main-image" />
           </div>
           <div className="product-info">
-            <h1>Nonka Slonka</h1>
+            <h1>{pet.title}</h1>
             <p className="product-breed" name="breed">
-              breed: nonaka bonbonka
+              breed: {pet.breed}
             </p>
             <p className="product-type" name="type">
-              Type: Cat
+              Type: {pet.petType}
             </p>
             <p className="product-description" name="description">
-              Our limited edition Chocolate Matcha is made from pure Cameroonian
-              cacao and green tea that retains its rich flavor. It’s
-              gluten-free, packed with antioxidants, and perfect for a health
-              boost!
+              {pet.description}
             </p>
 
             <div className="wishlist-actions">
-              <button className="wishlist-button">Wishlist</button>
-              <button className="edit-button">Edit</button>
-              <button className="delete-button">Delete</button>
-              <button className="wishlist-button">Adopt</button>
+              {isOwner ? (
+                <>
+                  <Link to={`/pets/${petId}/edit`}>
+                    <button className="edit-button">Edit</button>
+                  </Link>
+                  <button
+                    onClick={petDeleteClickHandler}
+                    className="delete-button"
+                  >
+                    Delete
+                  </button>
+                </>
+              ) : isAuthenticated ? (
+                <>
+                  <button className="wishlist-button">Wishlist</button>
+                  <button className="wishlist-button">Adopt</button>
+                </>
+              ) : null}
             </div>
           </div>
         </div>

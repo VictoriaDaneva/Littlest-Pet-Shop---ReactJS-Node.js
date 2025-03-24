@@ -4,6 +4,28 @@ import request from "../utils/request";
 
 const baseUrl = "http://localhost:3000/api/products";
 
+export const useDeletePet = () => {
+  const { accessToken } = useAuth();
+
+  const deletePet = async (petId) => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.delete(`${baseUrl}/${petId}`, options);
+      return response;
+    } catch (error) {
+      console.error("❌ Error deleting pet:", error);
+      throw error;
+    }
+  };
+
+  return deletePet;
+};
+
 export const createPet = () => {
   const { accessToken } = useAuth();
 
@@ -22,6 +44,21 @@ export const createPet = () => {
       throw error;
     }
   };
+};
+
+export const getPet = (petId) => {
+  const { accessToken } = useAuth();
+  const [pet, setPet] = useState({});
+
+  useEffect(() => {
+    const options = accessToken
+      ? { headers: { "X-Authorization": accessToken } }
+      : {};
+
+    request.get(`${baseUrl}/${petId}`, options).then(setPet);
+  }, [petId, accessToken]);
+
+  return { pet };
 };
 
 export const getPets = () => {

@@ -60,9 +60,8 @@ petsController.delete("/:id", checkIsOwner, async (req, res) => {
     return res.status(400).json({ message: error });
   }
 });
-
 //Edit a post
-petsController.post("/:id/edit", checkIsOwner, async (req, res) => {
+petsController.post("/:id/edit", async (req, res) => {
   const productId = req.params.id;
   const petParams = req.body;
   try {
@@ -77,7 +76,6 @@ petsController.post("/:id/edit", checkIsOwner, async (req, res) => {
 //Details
 petsController.get("/:id", async (req, res) => {
   const productId = req.params.id;
-  console.log(productId);
 
   try {
     const data = await petsService.getOne(productId);
@@ -133,10 +131,14 @@ async function isOwner(req, res, next) {
 async function checkIsOwner(req, res, next) {
   let product = await petsService.getOne(req.params.id);
 
-  if (product.owner == req.user._id) {
+  if (!req.user || !req.user._id) {
+    return res.status(401).json({ message: "Unauthorized: No user ID found" });
+  }
+
+  if (product.owner.toString() === req.user._id) {
     next();
   } else {
-    res.status(404);
+    return res.status(403).json({ message: "Forbidden: Not the owner" });
   }
 }
 export default petsController;
