@@ -106,11 +106,11 @@ export default function EditProfile() {
           onChange={handleInputChange}
           required
         />
-        <button type="submit">Save Changes</button>
-        <Link to="/profile">
-          <button type="button" className="cancel-btn">
-            Cancel
-          </button>
+        <button type="submit" className="button-subbmit">
+          Save Changes
+        </button>
+        <Link to="/profile" className="cancel-btn">
+          Cancel
         </Link>
       </form>
     </div>

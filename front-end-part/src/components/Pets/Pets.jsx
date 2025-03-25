@@ -33,7 +33,7 @@ export default function Pets() {
           </div>
         </div>
       </header>
-      <div className="items-section">
+      <div className="items-section products-grid">
         {pets.length > 0 ? (
           pets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
         ) : (

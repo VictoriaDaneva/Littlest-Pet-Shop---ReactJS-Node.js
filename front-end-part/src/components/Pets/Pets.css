@@ -22,13 +22,11 @@
   color: #555;
 }
 
-/* Dropdown Menu Styles */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Button */
 .dropbtn {
   font-size: 0.9rem;
   background: #30824a;
@@ -45,7 +43,6 @@
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
-/* Dropdown Content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -93,25 +90,27 @@
   }
 }
 .items-section {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
 }
-/* Product Grid */
+
 .products-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Make the entire card a clickable link */
 .card-link {
   text-decoration: none;
-  display: block; /* Makes the whole card clickable */
+  display: block;
   width: fit-content;
 }
 
-/* Product Card */
 .product-card {
   background: #ffffff;
   border-radius: 12px;
@@ -133,7 +132,6 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Product Image */
 .product-card img {
   width: 100%;
   height: 100px;

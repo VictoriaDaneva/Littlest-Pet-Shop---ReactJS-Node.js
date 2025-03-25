@@ -49,7 +49,7 @@
   color: #888;
 }
 
-.form button {
+.button-subbmit {
   width: 50%;
   margin: 0 auto;
   height: 50px;
@@ -63,7 +63,7 @@
   cursor: pointer;
 }
 
-.form button:hover {
+.button-subbmit {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
@@ -81,9 +81,22 @@ footer a:hover {
   text-decoration: underline;
 }
 .cancel-btn {
-  background: #711818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .cancel-btn:hover {
-  background: #a32424;
+  background: linear-gradient(to right, #ff6666, #ff99cc);
 }

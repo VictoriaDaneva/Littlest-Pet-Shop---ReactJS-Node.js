@@ -108,11 +108,11 @@ export default function EditPet() {
           required
         ></textarea>
         <div className="button-group">
-          <button type="submit">Save Changes</button>
-          <Link to={`/pets/${petId}/details`}>
-            <button type="button" className="cancel-btn">
-              Cancel
-            </button>
+          <button type="submit" className="button-subbmit">
+            Save Changes
+          </button>
+          <Link to={`/pets/${petId}/details`} className="cancel-btn">
+            Cancel
           </Link>
         </div>
       </form>
