@@ -1,17 +1,22 @@
 import { Link, useNavigate, useParams } from "react-router";
 import "./Pet.css";
 import useAuth from "../../hooks/useAuth";
-import { getPet, useDeletePet } from "../../api/petsApi";
+import { getPet, useDeletePet, useWishlistPet } from "../../api/petsApi";
 export default function Pet() {
   const navigate = useNavigate();
   const { userId, isAuthenticated } = useAuth();
   const { petId } = useParams();
   const { pet } = getPet(petId);
   const deletePet = useDeletePet();
+  const wishlistPet = useWishlistPet();
 
   if (!pet) {
     return <p>Loading...</p>;
   }
+  const petWishlistHandler = async () => {
+    await wishlistPet(petId);
+    navigate("/profile");
+  };
   const petDeleteClickHandler = async () => {
     const hasConfirm = confirm(`Are you sure you want to delete ${pet.title}?`);
     if (!hasConfirm) return;
@@ -55,7 +60,12 @@ export default function Pet() {
                 </>
               ) : isAuthenticated ? (
                 <>
-                  <button className="wishlist-button">Wishlist</button>
+                  <button
+                    onClick={petWishlistHandler}
+                    className="wishlist-button"
+                  >
+                    Wishlist
+                  </button>
                   <button className="wishlist-button">Adopt</button>
                 </>
               ) : null}

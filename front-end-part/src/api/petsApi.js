@@ -19,6 +19,27 @@ export const editPet = async (petId, updatedData, accessToken) => {
   }
 };
 
+export const useWishlistPet = () => {
+  const { accessToken } = useAuth();
+  const wishlistPet = async (petId) => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.get(`${baseUrl}/${petId}/like`, options);
+      return response;
+    } catch (error) {
+      console.error("❌ Error deleting pet:", error);
+      throw error;
+    }
+  };
+
+  return wishlistPet;
+};
+
 export const useDeletePet = () => {
   const { accessToken } = useAuth();
 
