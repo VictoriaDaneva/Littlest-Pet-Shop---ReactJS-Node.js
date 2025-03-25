@@ -108,7 +108,7 @@ export default function EditPet() {
           required
         ></textarea>
         <div className="button-group">
-          <button type="submit" className="button-subbmit">
+          <button type="submit" className="button-submit">
             Save Changes
           </button>
           <Link to={`/pets/${petId}/details`} className="cancel-btn">

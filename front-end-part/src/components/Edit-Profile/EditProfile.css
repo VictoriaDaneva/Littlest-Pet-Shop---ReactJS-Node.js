@@ -22,7 +22,8 @@
 }
 
 .form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -49,8 +50,13 @@
   color: #888;
 }
 
-.button-subbmit {
-  width: 50%;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.button-subbmit-profile {
+  width: 40%;
   margin: 0 auto;
   height: 50px;
   border-radius: 25px;
@@ -63,7 +69,7 @@
   cursor: pointer;
 }
 
-.button-subbmit {
+.button-subbmit-profile:hover {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 

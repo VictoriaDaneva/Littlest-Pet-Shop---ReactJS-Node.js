@@ -22,7 +22,8 @@
 }
 
 .form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -72,8 +73,9 @@
   gap: 15px;
 }
 
-.button-subbmit {
+.button-submit {
   width: 40%;
+  margin: 0 auto;
   height: 50px;
   border-radius: 25px;
   font-size: 14px;
@@ -85,8 +87,8 @@
   cursor: pointer;
 }
 
-.button-subbmit:hover {
-  background: linear-gradient(to right, #ff6666, #ff99cc);
+.button-submit:hover {
+  background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
 .cancel-btn {
