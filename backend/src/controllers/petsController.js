@@ -61,7 +61,7 @@ petsController.delete("/:id", checkIsOwner, async (req, res) => {
   }
 });
 //Edit a post
-petsController.post("/:id/edit", async (req, res) => {
+petsController.put("/:id/edit", async (req, res) => {
   const productId = req.params.id;
   const petParams = req.body;
   try {
@@ -78,7 +78,7 @@ petsController.get("/:id", async (req, res) => {
   const productId = req.params.id;
 
   try {
-    const data = await petsService.getOne(productId);
+    const data = await petsService.getOne(productId).populate("owner");
     return res.json(data);
   } catch (err) {
     console.log(getErrrorMessage(err));

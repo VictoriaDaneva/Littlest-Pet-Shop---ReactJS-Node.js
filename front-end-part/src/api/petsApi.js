@@ -4,6 +4,21 @@ import request from "../utils/request";
 
 const baseUrl = "http://localhost:3000/api/products";
 
+export const editPet = async (petId, updatedData, accessToken) => {
+  try {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    return await request.put(`${baseUrl}/${petId}/edit`, updatedData, options);
+  } catch (error) {
+    console.error("Error updating pet:", error);
+    throw error;
+  }
+};
+
 export const useDeletePet = () => {
   const { accessToken } = useAuth();
 

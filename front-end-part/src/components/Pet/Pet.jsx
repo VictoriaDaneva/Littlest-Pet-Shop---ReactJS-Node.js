@@ -19,7 +19,7 @@ export default function Pet() {
     await deletePet(petId);
     navigate("/pets");
   };
-  const isOwner = userId === pet.owner;
+  const isOwner = pet?.owner?._id && userId === pet.owner._id;
 
   return (
     <>
