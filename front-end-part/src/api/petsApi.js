@@ -3,6 +3,7 @@ import useAuth from "../hooks/useAuth";
 import request from "../utils/request";
 
 const baseUrl = "http://localhost:3000/api/products";
+const profileUrl = "http://localhost:3000/api/users/profile";
 
 export const editPet = async (petId, updatedData, accessToken) => {
   try {
@@ -17,6 +18,51 @@ export const editPet = async (petId, updatedData, accessToken) => {
     console.error("Error updating pet:", error);
     throw error;
   }
+};
+
+export const getWishlistPet = () => {
+  const { accessToken } = useAuth();
+  const getWishlist = async () => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.get(`${profileUrl}/wishlist`, options);
+      return response;
+    } catch (error) {
+      console.error("❌ Error deleting pet:", error);
+      throw error;
+    }
+  };
+
+  return getWishlist;
+};
+
+export const useUnsubscribePet = () => {
+  const { accessToken } = useAuth();
+  const unsubscribePet = async (petId) => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.get(
+        `${baseUrl}/${petId}/like/unsub`,
+        options
+      );
+      return response;
+    } catch (error) {
+      console.error("❌ Error unsubscribing from pet:", error);
+      throw error;
+    }
+  };
+
+  return unsubscribePet;
 };
 
 export const useWishlistPet = () => {

@@ -39,8 +39,8 @@ petsController.get("/:id/like", isOwner, async (req, res) => {
   const userId = req.user._id;
   try {
     await petsService.like(productId, userId);
-    await petsService.addToWishlistUser(productId, userId);
-    res.status(200).json({ message: "Product is liked successfully" });
+    const isLiked = await petsService.addToWishlistUser(productId, userId);
+    res.status(200).json({ isLiked });
   } catch (err) {
     const error = getErrrorMessage(err);
     return res.status(400).json({ message: error });

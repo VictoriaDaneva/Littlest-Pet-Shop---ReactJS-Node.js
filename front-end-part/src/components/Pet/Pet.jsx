@@ -1,7 +1,15 @@
 import { Link, useNavigate, useParams } from "react-router";
 import "./Pet.css";
 import useAuth from "../../hooks/useAuth";
-import { getPet, useDeletePet, useWishlistPet } from "../../api/petsApi";
+import {
+  getPet,
+  getWishlistPet,
+  useDeletePet,
+  useUnsubscribePet,
+  useWishlistPet,
+} from "../../api/petsApi";
+import { useEffect, useState } from "react";
+
 export default function Pet() {
   const navigate = useNavigate();
   const { userId, isAuthenticated } = useAuth();
@@ -9,12 +17,48 @@ export default function Pet() {
   const { pet } = getPet(petId);
   const deletePet = useDeletePet();
   const wishlistPet = useWishlistPet();
+  const getWishlist = getWishlistPet();
+  const unsubscribePet = useUnsubscribePet();
+
+  const [isLiked, setIsLiked] = useState(false);
 
   if (!pet) {
     return <p>Loading...</p>;
   }
+  useEffect(() => {
+    const checkIfLiked = async () => {
+      if (isAuthenticated) {
+        try {
+          const response = await getWishlist();
+          console.log("Response from getWishlist:", response);
+
+          if (Array.isArray(response)) {
+            const isInWishlist = response.some((item) => item._id === petId);
+            setIsLiked(isInWishlist);
+          } else {
+            console.error(
+              "Expected response to be an array, but got:",
+              response
+            );
+          }
+        } catch (error) {
+          console.error("Error checking if pet is in wishlist", error);
+        }
+      }
+    };
+
+    checkIfLiked();
+  }, [petId, isAuthenticated, getWishlist]);
+
   const petWishlistHandler = async () => {
     await wishlistPet(petId);
+    setIsLiked(true);
+    navigate("/profile");
+  };
+
+  const petUnsubscribeHandler = async () => {
+    await unsubscribePet(petId);
+    setIsLiked(false);
     navigate("/profile");
   };
   const petDeleteClickHandler = async () => {
@@ -60,12 +104,22 @@ export default function Pet() {
                 </>
               ) : isAuthenticated ? (
                 <>
-                  <button
-                    onClick={petWishlistHandler}
-                    className="wishlist-button"
-                  >
-                    Wishlist
-                  </button>
+                  {!isLiked && (
+                    <button
+                      onClick={petWishlistHandler}
+                      className="wishlist-button"
+                    >
+                      Wishlist
+                    </button>
+                  )}
+                  {isLiked && (
+                    <button
+                      onClick={petUnsubscribeHandler}
+                      className="wishlist-button"
+                    >
+                      Unsubscribe
+                    </button>
+                  )}
                   <button className="wishlist-button">Adopt</button>
                 </>
               ) : null}
