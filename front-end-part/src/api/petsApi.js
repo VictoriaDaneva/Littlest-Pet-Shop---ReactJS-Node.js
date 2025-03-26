@@ -20,25 +20,25 @@ export const editPet = async (petId, updatedData, accessToken) => {
   }
 };
 
-export const getWishlistPet = () => {
-  const { accessToken } = useAuth();
-  const getWishlist = async () => {
-    const options = {
-      headers: {
-        "X-Authorization": accessToken,
-      },
-    };
+export const getWishlistPet = async (accessToken) => {
+  if (!accessToken) {
+    console.error("❌ Error: No access token provided.");
+    throw new Error("No access token provided");
+  }
 
-    try {
-      const response = await request.get(`${profileUrl}/wishlist`, options);
-      return response;
-    } catch (error) {
-      console.error("❌ Error deleting pet:", error);
-      throw error;
-    }
+  const options = {
+    headers: {
+      "X-Authorization": accessToken,
+    },
   };
 
-  return getWishlist;
+  try {
+    const response = await request.get(`${profileUrl}/wishlist`, options);
+    return response;
+  } catch (error) {
+    console.error("❌ Error fetching wishlist:", error);
+    throw error;
+  }
 };
 
 export const useUnsubscribePet = () => {

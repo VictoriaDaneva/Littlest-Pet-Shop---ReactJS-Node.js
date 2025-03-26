@@ -9,15 +9,13 @@ import {
   useWishlistPet,
 } from "../../api/petsApi";
 import { useEffect, useState } from "react";
-
 export default function Pet() {
   const navigate = useNavigate();
-  const { userId, isAuthenticated } = useAuth();
+  const { userId, isAuthenticated, accessToken } = useAuth();
   const { petId } = useParams();
   const { pet } = getPet(petId);
   const deletePet = useDeletePet();
   const wishlistPet = useWishlistPet();
-  const getWishlist = getWishlistPet();
   const unsubscribePet = useUnsubscribePet();
 
   const [isLiked, setIsLiked] = useState(false);
@@ -25,11 +23,12 @@ export default function Pet() {
   if (!pet) {
     return <p>Loading...</p>;
   }
+
   useEffect(() => {
     const checkIfLiked = async () => {
-      if (isAuthenticated) {
+      if (isAuthenticated && accessToken) {
         try {
-          const response = await getWishlist();
+          const response = await getWishlistPet(accessToken);
           console.log("Response from getWishlist:", response);
 
           if (Array.isArray(response)) {
@@ -48,7 +47,7 @@ export default function Pet() {
     };
 
     checkIfLiked();
-  }, [petId, isAuthenticated, getWishlist]);
+  }, [petId, isAuthenticated, accessToken]);
 
   const petWishlistHandler = async () => {
     await wishlistPet(petId);
@@ -61,6 +60,7 @@ export default function Pet() {
     setIsLiked(false);
     navigate("/profile");
   };
+
   const petDeleteClickHandler = async () => {
     const hasConfirm = confirm(`Are you sure you want to delete ${pet.title}?`);
     if (!hasConfirm) return;
@@ -68,6 +68,7 @@ export default function Pet() {
     await deletePet(petId);
     navigate("/pets");
   };
+
   const isOwner = pet?.owner?._id && userId === pet.owner._id;
 
   return (

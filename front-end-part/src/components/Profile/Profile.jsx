@@ -4,11 +4,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 import "./Profile.css";
+import PetCatalogItem from "../Pets/pet-catalog-item/PetCatalogItem";
+import { getWishlistPet } from "../../api/petsApi";
+import useAuth from "../../hooks/useAuth";
 
 export default function Profile() {
   const { username, email, phoneNumber, address, imageUrl, userId } =
     useUserContext();
   const { fetchProfile } = useProfile();
+  const { accessToken } = useAuth();
+  const [wishlist, setWishlist] = useState([]);
   const [isProfileFetched, setIsProfileFetched] = useState(false);
 
   useEffect(() => {
@@ -17,6 +22,21 @@ export default function Profile() {
       setIsProfileFetched(true);
     }
   }, [userId, isProfileFetched]);
+
+  useEffect(() => {
+    const fetchWishlist = async () => {
+      try {
+        const response = await getWishlistPet(accessToken);
+        setWishlist(response);
+      } catch (error) {
+        console.error("Error fetching wishlist:", error);
+      }
+    };
+
+    if (accessToken) {
+      fetchWishlist();
+    }
+  }, [accessToken]);
 
   return (
     <>
@@ -49,22 +69,11 @@ export default function Profile() {
       <section className="recommended-items">
         <h2>Your Wishlist 🐾🪶</h2>
         <div className="product-grid">
-          <article className="product-card">
-            <img src="/primer2.png" alt="kotka" className="product-image" />
-            <h3 className="product-name">Peppermint Matcha</h3>
-            <p className="product-breed">breed: idk</p>
-            <Link to="/pet" className="details-link">
-              See More Details
-            </Link>
-          </article>
-          <article className="product-card">
-            <img src="/primer1.png" alt="kotka" className="product-image" />
-            <h3 className="product-name">Holiday Blend</h3>
-            <p className="product-breed">breed: nona</p>
-            <Link to="/pet" className="details-link">
-              See More Details
-            </Link>
-          </article>
+          {wishlist.length > 0 ? (
+            wishlist.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+          ) : (
+            <h3 className="no-pets">No pets in the wishlist yet</h3>
+          )}
         </div>
       </section>
     </>
