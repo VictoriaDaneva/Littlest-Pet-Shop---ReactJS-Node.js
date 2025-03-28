@@ -135,7 +135,17 @@ export default function Pet() {
         <h2>Recommended Items</h2>
         <div className="product-grid-pet">
           {latestPets.length > 0 ? (
-            latestPets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+            latestPets.map((pet) => (
+              <div key={pet._id} className="pet-product-card">
+                <img src={pet.imageUrl} alt={pet.name} />
+                <div className="pet-product-details">
+                  <h3 className="pet-product-name">{pet.name}</h3>
+                  <p className="pet-product-breed">{pet.breed}</p>
+                  <p className="pet-product-description">{pet.description}</p>
+                  <button className="pet-details-button">View Details</button>
+                </div>
+              </div>
+            ))
           ) : (
             <h3 className="no-pets">No new pets available</h3>
           )}

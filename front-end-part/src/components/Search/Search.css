@@ -40,8 +40,8 @@
 }
 
 .product-card-search img {
-  width: 100%;
-  height: auto;
+  width: 240px;
+  height: 250px;
   border-radius: 10px;
   margin-bottom: 15px;
 }

@@ -5,6 +5,22 @@ import request from "../utils/request";
 const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
 
+export const searchPets = async (query) => {
+  try {
+    const response = await fetch(
+      `${baseUrl}/search?q=${encodeURIComponent(query)}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch search results");
+    }
+
+    return await response.json();
+  } catch (err) {
+    throw new Error(err.message);
+  }
+};
+
 export const useLatestThreePets = () => {
   const [latestPets, setLatestPets] = useState([]);
 

@@ -1,9 +1,19 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import "./Heather.css";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 export default function Header() {
   const { isAuthenticated } = useAuth();
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter" && searchQuery.trim() !== "") {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
   return (
     <nav>
       <div className="left-section">
@@ -11,13 +21,14 @@ export default function Header() {
           <img src="/logo.png" alt="Littlest Pet Shop" />
         </Link>
         <div className="search-container">
-          <Link to="/search">
-            <input
-              type="text"
-              placeholder="🔍 Search..."
-              className="search-input"
-            />
-          </Link>
+          <input
+            type="text"
+            placeholder="🔍 Search..."
+            className="search-input"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleSearch}
+          />
         </div>
       </div>
       <div className="center-menu">
