@@ -5,10 +5,12 @@ import {
   getPet,
   getWishlistPet,
   useDeletePet,
+  useLatestThreePets,
   useUnsubscribePet,
   useWishlistPet,
 } from "../../api/petsApi";
 import { useEffect, useState } from "react";
+import PetCatalogItem from "../Pets/pet-catalog-item/PetCatalogItem";
 export default function Pet() {
   const navigate = useNavigate();
   const { userId, isAuthenticated, accessToken } = useAuth();
@@ -17,6 +19,7 @@ export default function Pet() {
   const deletePet = useDeletePet();
   const wishlistPet = useWishlistPet();
   const unsubscribePet = useUnsubscribePet();
+  const { latestPets } = useLatestThreePets();
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -131,14 +134,11 @@ export default function Pet() {
       <section className="recommended-items">
         <h2>Recommended Items</h2>
         <div className="product-grid-pet">
-          <article className="product-card">
-            <img src="/primer2.png" alt="Kotence" className="product-image" />
-            <h3 className="product-name">Kotence</h3>
-            <p className="product-breed">breed: idk</p>
-            <Link to="/pet" className="details-link">
-              See More Details
-            </Link>
-          </article>
+          {latestPets.length > 0 ? (
+            latestPets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+          ) : (
+            <h3 className="no-pets">No new pets available</h3>
+          )}
         </div>
       </section>
     </>
