@@ -5,6 +5,26 @@ import request from "../utils/request";
 const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
 
+export const useLatestThreePets = () => {
+  const [latestPets, setLatestPets] = useState([]);
+
+  useEffect(() => {
+    const fetchPets = async () => {
+      try {
+        const response = await request.get(baseUrl);
+        const latestThree = response.slice(-3).reverse();
+        setLatestPets(latestThree);
+      } catch (error) {
+        console.error("❌ Error fetching latest pets:", error);
+      }
+    };
+
+    fetchPets();
+  }, []);
+
+  return { latestPets };
+};
+
 export const editPet = async (petId, updatedData, accessToken) => {
   try {
     const options = {

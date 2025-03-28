@@ -161,83 +161,90 @@
   margin-bottom: 30px;
   font-weight: bold;
 }
-
-.product-cards {
+.products-grid {
   display: flex;
-  gap: 20px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Add spacing between cards */
+  flex-direction: row; /* Keep them in a row but wrapping properly */
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  width: fit-content;
 }
 
 .product-card {
-  text-decoration: none;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  height: 400px;
   padding: 20px;
+  margin-top: 20px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.product-image {
+.product-card img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 3px;
 }
 
-.product-title {
-  font-size: 1.2rem;
+.product-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.product-name {
+  font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: rgb(21, 65, 35);
+  color: #187130;
 }
 
 .product-breed {
   font-size: 1rem;
-  color: #1b3622;
-  margin-bottom: 15px;
+  color: #555;
+  font-style: italic;
 }
 
-.wishlist-button {
-  background: #187130d1;
-  color: #fff;
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.details-button {
+  background: #187130;
+  color: white;
   border: none;
   border-radius: 25px;
   padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease-in-out;
+  margin-top: 15px;
 }
 
-.wishlist-button:hover {
+.details-button:hover {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
-}
-
-@media (max-width: 768px) {
-  .products-section {
-    padding: 40px 15px;
-  }
-
-  .products-heading {
-    font-size: 1.6rem;
-  }
-
-  .product-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-card {
-    width: 90%;
-    max-width: 300px;
-  }
 }
 
 /*about us info*/

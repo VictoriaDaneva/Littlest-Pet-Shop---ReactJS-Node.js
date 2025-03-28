@@ -29,7 +29,6 @@ export default function Pet() {
       if (isAuthenticated && accessToken) {
         try {
           const response = await getWishlistPet(accessToken);
-          console.log("Response from getWishlist:", response);
 
           if (Array.isArray(response)) {
             const isInWishlist = response.some((item) => item._id === petId);

@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import "./Home.css";
+import { useLatestThreePets } from "../../api/petsApi";
+import PetCatalogItem from "../Pets/pet-catalog-item/PetCatalogItem";
 
 export default function Home() {
+  const { latestPets } = useLatestThreePets();
   return (
     <>
       <div className="hero-section">
@@ -57,23 +60,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="products-section">
+      <section className="products-section products-grid">
         <h2 className="products-heading">Our latest buddies</h2>
-        <div className="product-cards">
-          <Link to="/pet" className="product-card">
-            <div>
-              <img
-                src="primer1.png"
-                alt="Nona slona"
-                className="product-image"
-              />
-              <p className="product-title">Nona slona</p>
-              <p className="product-breed">breed: idk</p>
-
-              <button className="wishlist-button">Add to Wishlist</button>
-            </div>
-          </Link>
-        </div>
+        {latestPets.length > 0 ? (
+          latestPets.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+        ) : (
+          <h3 className="no-pets">No new pets available</h3>
+        )}
       </section>
 
       <div className="about-section">
