@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className="categories">
           <Link
-            to="/dogs"
+            to="/pets?type=dog"
             className="category-card"
             style={{ backgroundColor: "#c8e6c9" }}
           >
@@ -34,7 +34,7 @@ export default function Home() {
             <h3>Dog</h3>
           </Link>
           <Link
-            to="/rabbits"
+            to="/pets?type=rabbit"
             className="category-card"
             style={{ backgroundColor: "#ffecb3" }}
           >
@@ -42,7 +42,7 @@ export default function Home() {
             <h3>Rabbit</h3>
           </Link>
           <Link
-            to="/cats"
+            to="/pets?type=cat"
             className="category-card"
             style={{ backgroundColor: "#ffccbc" }}
           >
@@ -50,7 +50,7 @@ export default function Home() {
             <h3>Cat</h3>
           </Link>
           <Link
-            to="/birds"
+            to="/pets?type=bird"
             className="category-card"
             style={{ backgroundColor: "#e1bee7" }}
           >

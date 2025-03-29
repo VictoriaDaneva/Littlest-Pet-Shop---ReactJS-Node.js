@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { getPets } from "../../api/petsApi";
 import PetCatalogItem from "./pet-catalog-item/PetCatalogItem";
 import "./Pets.css";
+import { useLocation } from "react-router";
 
 export default function Pets() {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("all");
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchPets() {
@@ -16,6 +18,15 @@ export default function Pets() {
     }
     fetchPets();
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const type = params.get("type");
+
+    if (type) {
+      setSelectedBreed(type);
+    }
+  }, [location]);
 
   useEffect(() => {
     if (selectedBreed === "all") {
