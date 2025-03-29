@@ -179,12 +179,10 @@ export const getPet = (petId) => {
   return { pet };
 };
 
-export const getPets = () => {
-  const [pets, setPets] = useState([]);
-
-  useEffect(() => {
-    request.get(baseUrl).then(setPets);
-  }, []);
-
-  return { pets };
+export const getPets = async () => {
+  const response = await fetch(baseUrl);
+  if (!response.ok) {
+    throw new Error("Failed to fetch pets");
+  }
+  return await response.json();
 };

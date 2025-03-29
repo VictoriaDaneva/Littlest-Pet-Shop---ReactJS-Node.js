@@ -56,21 +56,26 @@
   z-index: 10;
 }
 
-.dropdown-content a {
+.dropdown-content button {
   display: flex;
   align-items: center;
   padding: 10px;
-  text-decoration: none;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
   color: #30824a;
+  font-size: 1rem;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
-.dropdown-content a img {
+.dropdown-content button img {
   width: 20px;
   margin-right: 10px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content button:hover {
   background: #e6f4ea;
 }
 
