@@ -2,12 +2,13 @@ import { Link } from "react-router";
 import "./Reserve.css";
 import useAuth from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
-import { getCartPet } from "../../api/petsApi";
+import { getCartPet, useRemoveCartPet } from "../../api/petsApi";
 import AdoptPet from "./adopt-pet/AdoptPet";
 
 export default function Reserve() {
   const { accessToken } = useAuth();
   const [cartList, setCartList] = useState([]);
+  const removeCartPet = useRemoveCartPet();
 
   useEffect(() => {
     const fetchCartList = async () => {
@@ -24,6 +25,15 @@ export default function Reserve() {
     }
   }, [accessToken]);
 
+  const removePet = async (petId) => {
+    try {
+      await removeCartPet(petId);
+      setCartList((prevList) => prevList.filter((pet) => pet._id !== petId));
+    } catch (error) {
+      console.error("Error removing pet:", error);
+    }
+  };
+
   return (
     <>
       <div className="adopt-container">
@@ -34,7 +44,9 @@ export default function Reserve() {
 
         <div className="adopt-pets">
           {cartList.length > 0 ? (
-            cartList.map((pet) => <AdoptPet key={pet._id} {...pet} />)
+            cartList.map((pet) => (
+              <AdoptPet key={pet._id} {...pet} onRemove={removePet} />
+            ))
           ) : (
             <p className="no-items">No pets selected for adoption yet :(</p>
           )}

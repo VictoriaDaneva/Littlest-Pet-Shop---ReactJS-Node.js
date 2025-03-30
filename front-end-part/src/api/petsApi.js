@@ -6,6 +6,30 @@ const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
 const cartUrl = "http://localhost:3000/api/cart/";
 
+export const useRemoveCartPet = () => {
+  const { accessToken } = useAuth();
+  const removeCartPet = async (petId) => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.get(
+        `${cartUrl}add/${petId}/remove`,
+        options
+      );
+      return response;
+    } catch (error) {
+      console.error("❌ Error unsubscribing from pet:", error);
+      throw error;
+    }
+  };
+
+  return removeCartPet;
+};
+
 export const getCartPet = async (accessToken) => {
   if (!accessToken) {
     console.error("❌ Error: No access token provided.");
