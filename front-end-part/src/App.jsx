@@ -1,25 +1,25 @@
 import { Routes, Route } from "react-router";
-import Header from "./components/Heather/Header";
+import Header from "./components/heather/Header";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import About from "./components/About-us/About-us";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
+import Footer from "./components/footer/Footer";
+import Home from "./components/home/Home";
+import About from "./components/about-us/About-us";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 import Reserve from "./components/Reserve/Reserve";
 import ChekOut from "./components/ChekOut/ChekOut";
 import Pets from "./components/Pets/Pets";
 import Create from "./components/Create/Create";
-import Pet from "./components/Pet/Pet";
-import ThankYou from "./components/ThankYou/ThankYou";
+import Pet from "./components/pet/Pet";
+import ThankYou from "./components/thank-you/ThankYou";
 import ErrorPage from "./components/404/404";
-import SearchPage from "./components/Search/Search";
+import SearchPage from "./components/search/Search";
 import UserProvider from "./providers/UserProviders";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestRouter";
-import Logout from "./components/Logout/Logout";
-import Profile from "./components/Profile/Profile";
-import EditProfile from "./components/Edit-Profile/EditProfile";
+import Logout from "./components/logout/Logout";
+import Profile from "./components/profile/Profile";
+import EditProfile from "./components/edit-profile/EditProfile";
 import EditPet from "./components/Edit-Pet/EditPet";
 
 function App() {
