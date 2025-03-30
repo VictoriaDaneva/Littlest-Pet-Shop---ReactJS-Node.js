@@ -1,13 +1,21 @@
 import { Schema, model, Types } from "mongoose";
 
 const orderSchema = new Schema({
-  username: {
-    type: String,
-    required: [true, "Username is required!"],
-  },
   email: {
     type: String,
     required: [true, "Email is required!"],
+  },
+  adoptionDate: {
+    type: String,
+    required: [true, "Adoption Date is required!"],
+  },
+  firstName: {
+    type: String,
+    required: [true, "First Name is required!"],
+  },
+  lastName: {
+    type: String,
+    required: [true, "Last Name is required!"],
   },
   phoneNumber: {
     type: String,
@@ -17,11 +25,6 @@ const orderSchema = new Schema({
     type: String,
     required: [true, "Address is required!"],
   },
-  total: {
-    type: String,
-    required: [true, "Price is requered!!"],
-  },
-
   owner: {
     type: Types.ObjectId,
     ref: "User",

@@ -33,30 +33,29 @@ export default function Reserve() {
       console.error("Error removing pet:", error);
     }
   };
-
   return (
-    <>
-      <div className="adopt-container">
-        <div className="adopt-title-container">
-          <h2 className="adopt-title">Adopt a Pet</h2>
-          <button className="close-btn">&times;</button>
-        </div>
-
-        <div className="adopt-pets">
-          {cartList.length > 0 ? (
-            cartList.map((pet) => (
-              <AdoptPet key={pet._id} {...pet} onRemove={removePet} />
-            ))
-          ) : (
-            <p className="no-items">No pets selected for adoption yet :(</p>
-          )}
-        </div>
-        <div className="adopt-footer">
-          <Link to="/checkOut">
-            <button className="adopt-now">Proceed with Adoption</button>
-          </Link>
-        </div>
+    <div className="adopt-container">
+      <div className="adopt-title-container">
+        <h2 className="adopt-title">Adopt a Pet</h2>
+        <button className="close-btn">&times;</button>
       </div>
-    </>
+
+      <div className="adopt-pets">
+        {cartList.length > 0 ? (
+          <>
+            {cartList.map((pet) => (
+              <AdoptPet key={pet._id} {...pet} onRemove={removePet} />
+            ))}
+            <div className="adopt-footer">
+              <Link to="/checkOut">
+                <button className="adopt-now">Proceed with Adoption</button>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <p className="no-items">No pets selected for adoption yet :(</p>
+        )}
+      </div>
+    </div>
   );
 }

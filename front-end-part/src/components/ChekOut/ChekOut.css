@@ -61,6 +61,12 @@ input[type="date"] {
 }
 
 /* Summary Section */
+.pets-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .summary-section {
   width: 40%;
   background: #ffffff;
