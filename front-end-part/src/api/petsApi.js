@@ -4,6 +4,28 @@ import request from "../utils/request";
 
 const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
+const cartUrl = "http://localhost:3000/api/cart/add";
+
+export const useCartPet = () => {
+  const { accessToken } = useAuth();
+  const cartPet = async (petId) => {
+    const options = {
+      headers: {
+        "X-Authorization": accessToken,
+      },
+    };
+
+    try {
+      const response = await request.get(`${cartUrl}/${petId}`, options);
+      return response;
+    } catch (error) {
+      console.error("❌ Error deleting pet:", error);
+      throw error;
+    }
+  };
+
+  return cartPet;
+};
 
 export const searchPets = async (query) => {
   try {

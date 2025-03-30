@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import {
   getPet,
   getWishlistPet,
+  useCartPet,
   useDeletePet,
   useLatestThreePets,
   useUnsubscribePet,
@@ -20,6 +21,7 @@ export default function Pet() {
   const wishlistPet = useWishlistPet();
   const unsubscribePet = useUnsubscribePet();
   const { latestPets } = useLatestThreePets();
+  const cartPet = useCartPet();
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -50,6 +52,11 @@ export default function Pet() {
 
     checkIfLiked();
   }, [petId, isAuthenticated, accessToken]);
+
+  const petCartHandler = async () => {
+    await cartPet(petId);
+    navigate("/reserve");
+  };
 
   const petWishlistHandler = async () => {
     await wishlistPet(petId);
@@ -123,7 +130,9 @@ export default function Pet() {
                       Unsubscribe
                     </button>
                   )}
-                  <button className="wishlist-button">Adopt</button>
+                  <button onClick={petCartHandler} className="wishlist-button">
+                    Adopt
+                  </button>
                 </>
               ) : null}
             </div>
