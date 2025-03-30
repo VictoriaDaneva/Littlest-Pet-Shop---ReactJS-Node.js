@@ -166,8 +166,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Add spacing between cards */
-  flex-direction: row; /* Keep them in a row but wrapping properly */
+  gap: 20px;
+  flex-direction: row;
 }
 
 .card-link {

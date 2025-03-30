@@ -4,7 +4,28 @@ import request from "../utils/request";
 
 const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
-const cartUrl = "http://localhost:3000/api/cart/add";
+const cartUrl = "http://localhost:3000/api/cart/";
+
+export const getCartPet = async (accessToken) => {
+  if (!accessToken) {
+    console.error("❌ Error: No access token provided.");
+    throw new Error("No access token provided");
+  }
+
+  const options = {
+    headers: {
+      "X-Authorization": accessToken,
+    },
+  };
+
+  try {
+    const response = await request.get(`${cartUrl}`, options);
+    return response;
+  } catch (error) {
+    console.error("❌ Error fetching wishlist:", error);
+    throw error;
+  }
+};
 
 export const useCartPet = () => {
   const { accessToken } = useAuth();
@@ -16,7 +37,7 @@ export const useCartPet = () => {
     };
 
     try {
-      const response = await request.get(`${cartUrl}/${petId}`, options);
+      const response = await request.get(`${cartUrl}add/${petId}`, options);
       return response;
     } catch (error) {
       console.error("❌ Error deleting pet:", error);

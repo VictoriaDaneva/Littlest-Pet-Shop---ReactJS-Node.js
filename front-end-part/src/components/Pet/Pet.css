@@ -6,7 +6,6 @@
   padding-left: 350px;
 }
 
-/* Product Details Page */
 .product-details-page {
   padding: 40px 20px;
   background-color: #ffffffbd;
@@ -20,7 +19,6 @@
   justify-content: space-between;
 }
 
-/* Center the main image */
 .product-image {
   display: flex;
   justify-content: center;
@@ -63,15 +61,14 @@
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
-/* Recommended Items Section */
 .recommended-items {
   margin-top: 50px;
   background-color: #ffffffbd;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  overflow-x: auto; /* Enables horizontal scrolling */
-  white-space: nowrap; /* Prevents wrapping of inline elements */
+  overflow-x: auto;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
 }
@@ -83,18 +80,16 @@
   text-align: center;
 }
 
-/* Ensure this grid does not interfere with the home page */
 .pet-products-grid {
   display: flex;
-  flex-wrap: nowrap; /* Ensure items stay in a row */
-  gap: 20px; /* Space between items */
-  justify-content: flex-start; /* Align items in a single row */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  padding-bottom: 10px; /* Prevent cut-off at bottom */
-  width: 100%; /* Ensure full width */
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
-/* Product Card */
 .pet-product-card {
   background: #ffffff;
   border-radius: 12px;
@@ -108,7 +103,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0; /* Prevent items from shrinking */
+  flex-shrink: 0;
 }
 
 .pet-product-card:hover {
@@ -118,7 +113,7 @@
 
 .pet-product-card img {
   width: 100%;
-  height: 240px; /* Keep height uniform */
+  height: 240px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
