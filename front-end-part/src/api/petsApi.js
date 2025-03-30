@@ -6,6 +6,30 @@ const baseUrl = "http://localhost:3000/api/products";
 const profileUrl = "http://localhost:3000/api/users/profile";
 const cartUrl = "http://localhost:3000/api/cart/";
 
+export const reservePet = () => {
+  const { accessToken } = useAuth();
+
+  return async (reservePetData) => {
+    try {
+      const options = {
+        headers: {
+          "X-Authorization": accessToken,
+        },
+      };
+
+      const response = await request.post(
+        `${cartUrl}order`,
+        reservePetData,
+        options
+      );
+      return response;
+    } catch (error) {
+      console.error("Error creating pet:", error);
+      throw error;
+    }
+  };
+};
+
 export const useRemoveCartPet = () => {
   const { accessToken } = useAuth();
   const removeCartPet = async (petId) => {
