@@ -10,8 +10,8 @@ const PORT = 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow requests from Angular dev server
-    credentials: true, // Allow cookies and authentication headers
+    origin: "http://localhost:5173",
+    credentials: true,
   })
 );
 
@@ -20,10 +20,10 @@ const url = "mongodb://localhost:27017";
 mongoose
   .connect(url, { dbName: "Pets" })
   .then(console.log(`DB Connected!`))
-  .catch((err) => console.log(`DB Failed! ${err}`)); //setup the name based on the project
+  .catch((err) => console.log(`DB Failed! ${err}`));
 
 //app.use("/static", express.static("src/public")); //remove the dots
-app.use(express.json()); // To parse JSON payloads
+app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // to not have complex data (false)
 app.use(cookieParser());
 app.use(authMiddleware);
