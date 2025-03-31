@@ -3,7 +3,7 @@ import "./ChekOut.css";
 import useAuth from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
 import { getCartPet, reservePet } from "../../api/petsApi";
-import CheckOutPet from "./chekOut-pet/CheckOutPet";
+import CheckOutPet from "./ChekOut-pet/CheckOutPet";
 
 export default function ChekOut() {
   const { accessToken } = useAuth();

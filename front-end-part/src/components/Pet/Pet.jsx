@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import "./Pet.css";
 import useAuth from "../../hooks/useAuth";
 import {
+  getCartPet,
   getPet,
   getWishlistPet,
   useCartPet,
@@ -23,6 +24,7 @@ export default function Pet() {
   const { latestPets } = useLatestThreePets();
   const cartPet = useCartPet();
   const [isLiked, setIsLiked] = useState(false);
+  const [cartList, setCartList] = useState([]);
 
   if (!pet) {
     return <p>Loading...</p>;
@@ -52,11 +54,32 @@ export default function Pet() {
     checkIfLiked();
   }, [petId, isAuthenticated, accessToken]);
 
+  useEffect(() => {
+    const fetchCartList = async () => {
+      try {
+        const response = await getCartPet(accessToken);
+        setCartList(response);
+      } catch (error) {
+        console.error("Error fetching cart list:", error);
+      }
+    };
+
+    if (accessToken) {
+      fetchCartList();
+    }
+  }, [accessToken]);
+
   const petCartHandler = async () => {
+    const isPetInCart = cartList.some((petInCart) => petInCart._id === petId);
+
+    if (isPetInCart) {
+      alert("This pet is already in your cart!");
+      return;
+    }
+
     await cartPet(petId);
     navigate("/reserve");
   };
-
   const petWishlistHandler = async () => {
     await wishlistPet(petId);
     setIsLiked(true);
