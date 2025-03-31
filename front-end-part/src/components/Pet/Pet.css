@@ -142,7 +142,6 @@
   text-align: center;
 }
 
-/* Button Styling */
 .pet-details-button {
   background: #187130;
   color: white;
@@ -157,4 +156,49 @@
 
 .pet-details-button:hover {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
+}
+@media screen and (max-width: 768px) {
+  .main-image {
+    height: 450px;
+    width: 400px;
+    padding-left: 3px;
+  }
+
+  .product-details-page {
+    padding: 20px;
+  }
+
+  .product-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .wishlist-button,
+  .edit-button,
+  .delete-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .product-grid-pet {
+    gap: 10px;
+    padding-bottom: 5px;
+  }
+
+  .pet-product-card {
+    width: 230px;
+    height: 420px;
+    padding: 15px;
+  }
+
+  .pet-product-card img {
+    height: 200px;
+  }
+
+  .pet-product-name {
+    font-size: 1.2rem;
+  }
+
+  .pet-product-description {
+    font-size: 0.85rem;
+  }
 }
