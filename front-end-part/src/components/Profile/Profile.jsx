@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 import "./Profile.css";
-import PetCatalogItem from "../Pets/pet-catalog-item/PetCatalogItem";
 import { getWishlistPet } from "../../api/petsApi";
 import useAuth from "../../hooks/useAuth";
+import ProfilePetWishlist from "./Profile-pet-wishlist/ProfilePetWishlist";
 
 export default function Profile() {
   const { username, email, phoneNumber, address, imageUrl, userId } =
@@ -70,7 +70,7 @@ export default function Profile() {
         <h2>Your Wishlist 🐾🪶</h2>
         <div className="product-grid">
           {wishlist.length > 0 ? (
-            wishlist.map((pet) => <PetCatalogItem key={pet._id} {...pet} />)
+            wishlist.map((pet) => <ProfilePetWishlist key={pet._id} {...pet} />)
           ) : (
             <h3 className="no-pets">No pets in the wishlist yet</h3>
           )}

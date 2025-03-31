@@ -12,7 +12,6 @@ import {
   useWishlistPet,
 } from "../../api/petsApi";
 import { useEffect, useState } from "react";
-import PetCatalogItem from "../Pets/pet-catalog-item/PetCatalogItem";
 export default function Pet() {
   const navigate = useNavigate();
   const { userId, isAuthenticated, accessToken } = useAuth();
