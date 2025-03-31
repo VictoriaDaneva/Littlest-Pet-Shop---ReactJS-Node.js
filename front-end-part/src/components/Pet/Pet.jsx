@@ -22,7 +22,6 @@ export default function Pet() {
   const unsubscribePet = useUnsubscribePet();
   const { latestPets } = useLatestThreePets();
   const cartPet = useCartPet();
-  //testtest
   const [isLiked, setIsLiked] = useState(false);
 
   if (!pet) {

@@ -15,7 +15,7 @@ export default function Profile() {
   const { accessToken } = useAuth();
   const [wishlist, setWishlist] = useState([]);
   const [isProfileFetched, setIsProfileFetched] = useState(false);
-
+  //testest
   useEffect(() => {
     if (userId && !isProfileFetched) {
       fetchProfile();
