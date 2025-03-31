@@ -141,7 +141,7 @@ export default function Pet() {
       </section>
 
       <section className="recommended-items">
-        <h2>Recommended Items</h2>
+        <h2>Recommended Pets</h2>
         <div className="product-grid-pet">
           {latestPets.length > 0 ? (
             latestPets.map((pet) => (
@@ -151,7 +151,9 @@ export default function Pet() {
                   <h3 className="pet-product-name">{pet.name}</h3>
                   <p className="pet-product-breed">{pet.breed}</p>
                   <p className="pet-product-description">{pet.description}</p>
-                  <button className="pet-details-button">View Details</button>
+                  <Link to={`/pets/${pet._id}/details`}>
+                    <button className="pet-details-button">View Details</button>
+                  </Link>
                 </div>
               </div>
             ))

@@ -68,9 +68,6 @@
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
-  white-space: nowrap;
-  display: flex;
-  flex-direction: column;
 }
 
 .recommended-items h2 {
@@ -80,7 +77,7 @@
   text-align: center;
 }
 
-.pet-products-grid {
+.product-grid-pet {
   display: flex;
   flex-wrap: nowrap;
   gap: 20px;
