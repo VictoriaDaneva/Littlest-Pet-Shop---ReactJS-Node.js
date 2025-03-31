@@ -58,7 +58,7 @@ Welcome to **Littlest Pet Shop**, a modern and user-friendly adoption center web
      ```
    - Start the backend server:
      ```sh
-     npm start
+     npm start (or "npm run dev")
      ```
 
 4. **Run the Frontend**
@@ -66,9 +66,13 @@ Welcome to **Littlest Pet Shop**, a modern and user-friendly adoption center web
      ```sh
      cd ../frontend
      ```
+   - Install backend dependencies:
+     ```sh
+     npm install
+     ```
    - Start the development server:
      ```sh
-     npm start
+     npm start (or "npm run dev")
      ```
 
 ---
