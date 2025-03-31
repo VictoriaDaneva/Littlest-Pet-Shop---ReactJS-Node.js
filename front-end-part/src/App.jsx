@@ -11,7 +11,7 @@ import ChekOut from "./components/ChekOut/ChekOut";
 import Pets from "./components/Pets/Pets";
 import Create from "./components/Create/Create";
 import Pet from "./components/Pet/Pet";
-import ThankYou from "./components/Thank-you/ThankYou";
+import ThankYou from "./components/thank-you/ThankYou";
 import ErrorPage from "./components/404/404";
 import SearchPage from "./components/Search/Search";
 import UserProvider from "./providers/UserProviders";
