@@ -10,15 +10,14 @@ export default function About() {
             <h3>ABOUT</h3>
             <h1>Littles Pet Shop</h1>
             <p>
-              At Chamberlain Coffee, we’re passionate about providing
-              high-quality, delicious beverages. So you can enjoy every sip,
-              slurp, and spill (it happens) with the knowledge that what you’re
-              drinking isn’t just delicious, but also thoughtfully made.
-            </p>
-            <p>
-              We are grateful to be a part of your daily routine, and we take it
-              seriously. We believe that drinks can be more than just drinks,
-              but sources of joy, inspiration, and creativity in a cup.
+              At Littlest Pet Shop, we believe that every pet deserves a loving
+              home. Our mission is to connect adorable pets in need with caring
+              families, making the adoption process simple, safe, and rewarding.
+              Whether you're looking for a playful puppy, a cuddly kitten, or a
+              small furry friend, we provide a welcoming space where animals
+              find their perfect match. With a deep commitment to pet welfare,
+              we ensure that each pet is given the love, care, and medical
+              attention they need before finding their forever home.
             </p>
           </div>
         </div>
@@ -26,17 +25,16 @@ export default function About() {
           <img src="/cat pet.webp" />
           <div className="text-box">
             <h3>ABOUT</h3>
-            <h1>Chamberlain Coffee</h1>
+            <h1>Littles Pet Shop</h1>
             <p>
-              At Chamberlain Coffee, we’re passionate about providing
-              high-quality, delicious beverages. So you can enjoy every sip,
-              slurp, and spill (it happens) with the knowledge that what you’re
-              drinking isn’t just delicious, but also thoughtfully made.
-            </p>
-            <p>
-              We are grateful to be a part of your daily routine, and we take it
-              seriously. We believe that drinks can be more than just drinks,
-              but sources of joy, inspiration, and creativity in a cup.
+              Beyond adoptions, Littlest Pet Shop is dedicated to educating
+              future pet owners on responsible pet care. We provide valuable
+              resources, expert advice, and ongoing support to ensure a smooth
+              transition for both pets and their new families. Our team works
+              closely with local shelters and rescue organizations, helping
+              abandoned and surrendered animals get a second chance at
+              happiness. By choosing adoption, you’re not just getting a
+              pet—you’re giving an animal the life it deserves.
             </p>
           </div>
         </div>
@@ -44,17 +42,16 @@ export default function About() {
           <img src="/bunny pet.jpg" />
           <div className="text-box">
             <h3>ABOUT</h3>
-            <h1>Chamberlain Coffee</h1>
+            <h1>Littles Pet Shop</h1>
+
             <p>
-              At Chamberlain Coffee, we’re passionate about providing
-              high-quality, delicious beverages. So you can enjoy every sip,
-              slurp, and spill (it happens) with the knowledge that what you’re
-              drinking isn’t just delicious, but also thoughtfully made.
-            </p>
-            <p>
-              We are grateful to be a part of your daily routine, and we take it
-              seriously. We believe that drinks can be more than just drinks,
-              but sources of joy, inspiration, and creativity in a cup.
+              Join us in making a difference! Whether you're ready to adopt,
+              foster, or support our cause, every effort helps create a better
+              future for these lovable companions. At Littlest Pet Shop, we
+              believe in building a community that celebrates the joy and
+              unconditional love that pets bring into our lives. Together, we
+              can give every pet a home filled with warmth, care, and endless
+              affection.
             </p>
           </div>
         </div>
