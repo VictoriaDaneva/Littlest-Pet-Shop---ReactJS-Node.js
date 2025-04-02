@@ -16,10 +16,15 @@ app.use(
 );
 
 //setup db
-const url = "mongodb://localhost:27017";
+const url =
+  "mongodb+srv://viktoriadanevas2003s:VikiSeMuchiSMongoDB@cluster0.vkxxy20.mongodb.net/Pets";
+
 mongoose
-  .connect(url, { dbName: "Pets" })
-  .then(console.log(`DB Connected!`))
+  .connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB Connected!"))
   .catch((err) => console.log(`DB Failed! ${err}`));
 
 //app.use("/static", express.static("src/public")); //remove the dots
