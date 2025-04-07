@@ -37,7 +37,9 @@ export default function Reserve() {
     <div className="adopt-container">
       <div className="adopt-title-container">
         <h2 className="adopt-title">Adopt a Pet</h2>
-        <button className="close-btn">&times;</button>
+        <Link to="/pets">
+          <button className="close-btn">&times;</button>
+        </Link>
       </div>
 
       <div className="adopt-pets">

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import request from "../utils/request";
 
-const baseUrl = "http://localhost:3000/api/products";
-const profileUrl = "http://localhost:3000/api/users/profile";
-const cartUrl = "http://localhost:3000/api/cart/";
+const baseUrl = `http://localhost:8080/api/products`;
+const profileUrl = `http://localhost:8080/api/users/profile`;
+const cartUrl = `http://localhost:8080/api/cart/`;
 
 export const reservePet = () => {
   const { accessToken } = useAuth();

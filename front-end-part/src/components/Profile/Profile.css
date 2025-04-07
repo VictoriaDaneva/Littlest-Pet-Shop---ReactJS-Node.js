@@ -129,3 +129,45 @@
 .details-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .recommended-items {
+    margin-top: 30px;
+    padding: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .recommended-items h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-bottom: 10px;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .product-card {
+    min-width: 180px;
+    flex-shrink: 0;
+    padding: 12px;
+    margin-bottom: 5px;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .recommended-items::-webkit-scrollbar {
+    display: none;
+  }
+  .recommended-items {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

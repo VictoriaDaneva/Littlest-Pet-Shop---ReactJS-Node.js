@@ -48,3 +48,58 @@
 .home-button:hover {
   background-color: #ed5688;
 }
+
+@media (max-width: 768px) {
+  .thank-you-container {
+    flex-direction: column-reverse;
+    width: calc(100% - 40px);
+    margin: 100px auto 50px;
+    padding: 25px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #f9f9f9c5;
+    overflow: hidden;
+  }
+
+  .thank-you-text {
+    margin-right: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .thank-you-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
+  .thank-you-h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .thank-you-p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    padding: 0 5px;
+  }
+
+  .home-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .home-button {
+    text-decoration: none;
+  }
+
+  a.home-button {
+    display: block;
+    width: 100%;
+  }
+}

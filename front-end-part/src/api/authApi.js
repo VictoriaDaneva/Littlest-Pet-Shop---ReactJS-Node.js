@@ -3,7 +3,7 @@ import { useContext } from "react";
 import request from "../utils/request";
 import { UserContext, useUserContext } from "../contexts/UserContext";
 
-const baseUrl = "http://localhost:3000/api";
+const baseUrl = `http://localhost:8080/api`;
 
 export const editProfile = async (userId, updatedData, accessToken) => {
   try {

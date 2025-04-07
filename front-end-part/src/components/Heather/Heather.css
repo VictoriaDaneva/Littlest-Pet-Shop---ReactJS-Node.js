@@ -78,36 +78,81 @@ nav .auth-menu .item {
   transition: background 0.3s, border-color 0.3s;
 }
 
-nav .auth-menu .item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: white;
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: row;
     align-items: center;
-    height: auto;
-    padding: 15px 10px;
+    height: 60px;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+    overflow: visible;
   }
 
   nav .left-section {
+    flex: 1;
     flex-direction: row;
     gap: 15px;
+    align-items: center;
+    min-width: 0;
   }
 
   nav .logo img {
-    width: 60px;
+    width: 50px;
+    height: auto;
   }
 
   nav .search-container {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     display: flex;
     justify-content: center;
   }
 
-  nav .search-input {
-    width: 80%;
+  nav .search-container .search-input {
+    width: 70%;
     font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  .menu-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .menu-container.open {
+    display: flex;
   }
 
   nav .center-menu {
@@ -115,18 +160,41 @@ nav .auth-menu .item:hover {
     transform: none;
     flex-direction: column;
     gap: 10px;
-    background: none;
+    width: 100%;
+    background: transparent;
     padding: 0;
+    border-radius: 0;
   }
 
   nav .center-menu .item {
     font-size: 1rem;
-    padding: 8px 10px;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    background: rgba(48, 130, 74, 0.1);
+    border-radius: 0;
+    margin: 0;
   }
 
   nav .auth-menu {
+    position: static;
+    transform: none;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  nav .auth-menu .item {
+    color: #30824a;
+    font-size: 1rem;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    background: rgba(48, 130, 74, 0.1);
+    border-radius: 0;
+    margin: 0;
   }
 }

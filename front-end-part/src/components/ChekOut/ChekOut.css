@@ -42,7 +42,6 @@ input[type="date"] {
   color: #333;
 }
 
-/* Buttons */
 .reserve-btn {
   width: 100%;
   padding: 14px;
@@ -60,7 +59,6 @@ input[type="date"] {
   background: linear-gradient(to right, #27a147c5, #feb2dcd3);
 }
 
-/* Summary Section */
 .pets-list {
   flex: 1;
   display: flex;
@@ -92,10 +90,53 @@ input[type="date"] {
 
 @media (max-width: 768px) {
   .checkout-container {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 80px auto 30px;
+    padding: 25px 20px;
+    box-sizing: border-box;
     flex-direction: column;
-    width: 90%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
+
+  .form-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+  }
+
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
   .summary-section {
     width: 100%;
+    padding: 20px 0 0;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .reserve-btn {
+    width: 100%;
+    margin: 20px 0 0;
+  }
+
+  .pets-list {
+    max-width: 100%;
+    overflow: hidden;
   }
 }

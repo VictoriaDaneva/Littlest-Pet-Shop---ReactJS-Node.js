@@ -116,8 +116,52 @@
 }
 
 @media (max-width: 768px) {
-  nav .menu {
-    flex-direction: column;
-    gap: 10px;
+  .card {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 80px auto;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .form {
+    gap: 12px;
+  }
+
+  .form input,
+  .loginButton {
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .form input {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .loginButton {
+    width: 60%;
+    height: 45px;
+  }
+
+  .input-container input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+
+  .general-error {
+    font-size: 13px;
   }
 }
